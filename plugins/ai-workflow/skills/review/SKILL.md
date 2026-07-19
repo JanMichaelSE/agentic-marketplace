@@ -134,5 +134,5 @@ Skip a lane only when it is not applicable to the supplied target, and record th
 - Treat missing source inputs as `BLOCKED` unless the user supplied an equivalent source.
 - Do not report `BLOCKED` solely because nested delegation is unavailable for a bounded workflow review; use parent-orchestrated lanes when lane results are supplied, otherwise use single-agent fallback with explicit residual risk.
 - Escalate conflicting or ambiguous requirements, unauthorized dependencies, security policy uncertainty, external validation requirements, and scope expansion as `human-decision`.
-- Do not require `review-toolkit`, `agentic-sdlc`, `codex exec`, Claude response files, Auggie-only agent files, GitHub inline comments, or Jira automation.
+- Do not require `review-toolkit`, `agentic-sdlc`, `codex exec`, Claude response files, host-specific agent files, GitHub inline comments, or Jira automation.
 - Optional companion review skills may be used inside lanes when available, but the output contract remains this skill's review summary.

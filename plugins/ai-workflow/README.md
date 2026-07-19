@@ -92,9 +92,9 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
 Install from the `agentic-marketplace` marketplace:
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install ai-workflow@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install ai-workflow@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace

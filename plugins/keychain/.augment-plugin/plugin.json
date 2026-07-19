@@ -1,7 +1,0 @@
-{
-  "name": "keychain",
-  "description": "Cross-platform guidance for developer-laptop credentials in OS-native secret stores.",
-  "version": "0.1.0",
-  "author": { "name": "Agentic Marketplace" },
-  "keywords": ["keychain", "secrets", "credentials", "macos", "linux", "windows", "security", "secret-store"]
-}

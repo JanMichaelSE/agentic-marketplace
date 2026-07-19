@@ -20,9 +20,9 @@ Installable plugin for GitHub CLI repository operations and repository-first Git
 Install from this Agentic Marketplace repository. Substitute the repository URL if you use a fork or self-hosted mirror.
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install github@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install github@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace

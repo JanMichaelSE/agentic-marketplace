@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "agentic-marketplace",
+  "description": "Agentic plugins and skills for Codex and Claude Code.",
+  "owner": {
+    "name": "JanMichaelSE"
+  },
+  "plugins": [
+    { "name": "ai-workflow", "source": "./plugins/ai-workflow" },
+    { "name": "atlassian", "source": "./plugins/atlassian" },
+    { "name": "development", "source": "./plugins/development" },
+    { "name": "experimental", "source": "./plugins/experimental" },
+    { "name": "github", "source": "./plugins/github" },
+    { "name": "infrastructure", "source": "./plugins/infrastructure" },
+    { "name": "keychain", "source": "./plugins/keychain" },
+    { "name": "review-toolkit", "source": "./plugins/review-toolkit" },
+    { "name": "software-architecture", "source": "./plugins/software-architecture" }
+  ]
+}

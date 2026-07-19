@@ -1,9 +1,0 @@
-{
-  "name": "experimental",
-  "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
-  "version": "3.0.0",
-  "author": {
-    "name": "Vantor"
-  },
-  "keywords": ["experimental", "preview", "incubator", "code-review", "improve-repo-harness", "writing-great-skills", "zoom-out"]
-}

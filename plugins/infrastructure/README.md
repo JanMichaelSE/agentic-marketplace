@@ -15,9 +15,9 @@ Installable plugin for AWS cloud, Kubernetes, Terraform, and Helm rollout infras
 Install from the `agentic-marketplace` marketplace:
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install infrastructure@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install infrastructure@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace

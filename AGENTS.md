@@ -5,12 +5,12 @@
 - Keep the `README.md` `Contents` section updated when adding, removing, renaming, or moving any top-level section.
 - When adding, removing, renaming, or moving any plugin or skill, update the compact `README.md` skill map and plugin catalog in the same change.
 - Keep `README.md` links pointed at the actual plugin `README.md` files, skill `SKILL.md` files, and specialist subagent files.
-- Keep `.agents/plugins/marketplace.json` and `.augment-plugin/marketplace.json` aligned with the plugin folders under `plugins/`.
+- Keep `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json` aligned with the plugin folders under `plugins/`.
 - If a plugin README contains its own skill table, update it when that plugin's skills change.
 
 ## Repository Purpose
 
-This repository is the Agentic Marketplace for agent plugins and skills. It supports both Codex and Auggie.
+This repository is the Agentic Marketplace for agent plugins and skills. It supports both Codex and Claude Code.
 
 The top-level README is the human-facing catalog. It should make the repo easy to browse without requiring users to understand the nested plugin folder structure first.
 
@@ -19,12 +19,12 @@ The top-level README is the human-facing catalog. It should make the repo easy t
 ```text
 agentic-marketplace/
 ├── .agents/plugins/marketplace.json   # Codex marketplace manifest
-├── .augment-plugin/marketplace.json   # Auggie marketplace manifest
+├── .claude-plugin/marketplace.json    # Claude Code marketplace manifest
 ├── plugins/
 │   ├── README.md                      # Plugin scaffold guidance
 │   ├── <plugin-name>/
 │   │   ├── .codex-plugin/plugin.json
-│   │   ├── .augment-plugin/plugin.json
+│   │   ├── .claude-plugin/plugin.json
 │   │   ├── README.md
 │   │   └── skills/
 │   │       └── <skill-name>/
@@ -51,14 +51,14 @@ Each installable marketplace plugin is a grouped unit under `plugins/<plugin-nam
 Each installable marketplace plugin should contain:
 
 - `.codex-plugin/plugin.json` for Codex plugin metadata.
-- `.augment-plugin/plugin.json` for Auggie plugin metadata.
+- `.claude-plugin/plugin.json` for Claude Code plugin metadata.
 - `README.md` describing the plugin and its included skills.
 - `skills/<skill-name>/SKILL.md` files containing the actual skill instructions.
 
 The root marketplace manifests point clients at the plugin folders:
 
 - `.agents/plugins/marketplace.json` lists plugins for Codex.
-- `.augment-plugin/marketplace.json` lists plugins for Auggie.
+- `.claude-plugin/marketplace.json` lists plugins for Claude Code.
 
 Do not create one top-level plugin folder per skill unless the marketplace structure changes. Prefer grouped plugin folders such as `deployments`, `infrastructure`, `java-service-patterns`, and `review-toolkit`, with related skills nested below `skills/`.
 

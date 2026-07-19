@@ -19,7 +19,7 @@ Use this plugin as the landing zone for new or evolving skills that are still ga
 
 This plugin intentionally contains only four experimental skills under `skills/<skill-name>/`.
 
-Each experimental skill should include its normal skill assets, such as `SKILL.md` and any client-specific metadata needed by Auggie or Codex.
+Each experimental skill should include its normal skill assets, such as `SKILL.md` and any client-specific metadata needed by Claude Code or Codex.
 
 ## Dependency Notes
 
@@ -50,9 +50,9 @@ The following skills were promoted out of `experimental`; install their destinat
 Install from the `agentic-marketplace` marketplace:
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install experimental@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install experimental@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace

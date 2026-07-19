@@ -1,0 +1,9 @@
+{
+  "name": "atlassian",
+  "version": "1.0.0",
+  "description": "Vendor-neutral Jira workflow guidance and read-oriented Confluence research helpers.",
+  "author": { "name": "Agentic Marketplace" },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/atlassian",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "skills": "./skills/"
+}

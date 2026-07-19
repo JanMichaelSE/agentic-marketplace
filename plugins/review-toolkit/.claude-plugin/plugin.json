@@ -1,0 +1,9 @@
+{
+  "name": "review-toolkit",
+  "version": "1.2.0",
+  "description": "Code, design, security, test-coverage, test-correctness, and multi-lens review skills.",
+  "author": { "name": "Vantor" },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/review-toolkit",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "skills": "./skills/"
+}

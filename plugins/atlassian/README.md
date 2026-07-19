@@ -14,9 +14,9 @@ Dual-client, vendor-neutral skills for Jira operations and read-oriented Conflue
 Install from this marketplace using its HTTPS repository URL:
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install atlassian@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install atlassian@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
@@ -34,7 +34,7 @@ codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
 
 ```text
 plugins/atlassian/
-├── .augment-plugin/plugin.json
+├── .claude-plugin/plugin.json
 ├── .codex-plugin/plugin.json
 ├── README.md
 ├── scripts/lib/

@@ -1,11 +1,11 @@
 # Agentic Marketplace
 
-Agentic plugins and skills for Codex and Auggie.
+Agentic plugins and skills for Codex and Claude Code.
 
 ## Table of Contents
 
 - [Installation](#installation)
-  - [Auggie](#auggie)
+  - [Claude Code](#claude-code)
   - [Codex](#codex)
 - [Skill Map](#skill-map)
 - [Plugin Catalog](#plugin-catalog)
@@ -14,66 +14,31 @@ Agentic plugins and skills for Codex and Auggie.
 
 ## Installation
 
-### Auggie
-
-> [!NOTE]
-> Augment plugins installed from the CLI are available to Augment in VS Code and
-> JetBrains integrations that use the same user environment. You do not need a
-> separate IDE marketplace setup after the CLI setup is complete.
+### Claude Code
 
 1. Add the marketplace first:
 
 ```bash
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
 ```
 
-2. Then install and enable the plugins you want. This terminal flow is an
-   alternative to the UI flow below; you do not need both:
+2. Then install the plugins you want:
 
 ```bash
-auggie plugin install ai-workflow@agentic-marketplace
-auggie plugin install atlassian@agentic-marketplace
-auggie plugin install development@agentic-marketplace
-auggie plugin install experimental@agentic-marketplace
-auggie plugin install github@agentic-marketplace
-auggie plugin install infrastructure@agentic-marketplace
-auggie plugin install keychain@agentic-marketplace
-auggie plugin install review-toolkit@agentic-marketplace
-auggie plugin install software-architecture@agentic-marketplace
+claude plugin install ai-workflow@agentic-marketplace
+claude plugin install atlassian@agentic-marketplace
+claude plugin install development@agentic-marketplace
+claude plugin install experimental@agentic-marketplace
+claude plugin install github@agentic-marketplace
+claude plugin install infrastructure@agentic-marketplace
+claude plugin install keychain@agentic-marketplace
+claude plugin install review-toolkit@agentic-marketplace
+claude plugin install software-architecture@agentic-marketplace
 ```
 
-Or, after adding the marketplace, enable plugins in the Auggie terminal UI:
-
-1. Open Auggie in any folder:
-
-<img src="docs/photos/augment/auggie-plugin-step-1.png" alt="Auggie Open" width="750" />
-
-2. Use `/plugins` command:
-
-<img src="docs/photos/augment/auggie-plugin-step-2.png" alt="Auggie Plugins" width="750" />
-
-3. Select the marketplace installed:
-
-<img src="docs/photos/augment/auggie-plugin-step-3.png" alt="Auggie Marketplace" width="750" />
-
-4. Select `Browse Plugins`:
-
-<img src="docs/photos/augment/auggie-plugin-step-4.png" alt="Auggie Browse" width="750" />
-
-5. A list of plugins will appear. Press `Space` on the plugins you want to enable:
-
-<img src="docs/photos/augment/auggie-plugin-step-5.png" alt="Auggie Enable" width="750" />
-
-6. Close and reopen Auggie. The enabled skills should appear with the marketplace as the prefix:
-
-<img src="docs/photos/augment/auggie-plugin-step-6.png" alt="Auggie Enabled" width="750" />
+Use `/plugin` in Claude Code to inspect installed plugins, enable or disable them, and refresh the marketplace.
 
 ### Codex
-
-> [!NOTE]
-> Codex plugins installed from the CLI are available to Codex in VS Code and
-> JetBrains integrations that use the same user environment. You do not need a
-> separate IDE marketplace setup after the CLI setup is complete.
 
 1. Add the marketplace first:
 
@@ -95,23 +60,7 @@ codex plugin add review-toolkit@agentic-marketplace
 codex plugin add software-architecture@agentic-marketplace
 ```
 
-Or, after adding the marketplace, enable plugins in the Codex terminal UI.
-
-1. Open Codex in any folder:
-
-<img src="docs/photos/codex/codex-plugin-step-1.png" alt="Codex Open" width="750" />
-
-2. Use `/plugins` command:
-
-<img src="docs/photos/codex/codex-plugin-step-2.png" alt="Codex Plugins" width="750" />
-
-3. Select the plugin you want and enable it with `Space`:
-
-<img src="docs/photos/codex/codex-plugin-step-3.png" alt="Codex Enable" width="750" />
-
-4. Use `$` to reference skills from an enabled plugin:
-
-<img src="docs/photos/codex/codex-plugin-step-4.png" alt="Codex Enabled" width="750" />
+Use `/plugins` in Codex to inspect and enable installed plugins.
 
 ## Skill Map
 
@@ -148,7 +97,7 @@ Detailed purpose and usage notes live in the plugin README and each `SKILL.md`. 
 ```text
 agentic-marketplace/
 ├── .agents/plugins/marketplace.json   # Codex marketplace manifest
-├── .augment-plugin/marketplace.json   # Auggie marketplace manifest
+├── .claude-plugin/marketplace.json    # Claude Code marketplace manifest
 ├── plugins/
 │   ├── ai-workflow/
 │   ├── atlassian/
@@ -169,12 +118,12 @@ Most plugins use this structure:
 ```text
 plugins/<plugin-name>/
 ├── .codex-plugin/plugin.json
-├── .augment-plugin/plugin.json
+├── .claude-plugin/plugin.json
 ├── README.md
 └── skills/
 ```
 
-All current plugins support both Auggie and Codex and use the shared `skills/` layout.
+All current plugins support both Claude Code and Codex and use the shared `skills/` layout.
 
 ## Contributing
 

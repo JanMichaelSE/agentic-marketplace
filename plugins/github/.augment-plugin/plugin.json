@@ -1,7 +1,0 @@
-{
-  "name": "github",
-  "description": "GitHub collaboration skills for repository operations, pull requests, issues, and GitHub Actions workflow guidance.",
-  "version": "1.0.0",
-  "author": { "name": "Vantor" },
-  "keywords": ["github", "gh", "pull-requests", "issues", "github-actions", "skills"]
-}

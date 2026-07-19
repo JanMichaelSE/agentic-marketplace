@@ -1,0 +1,9 @@
+{
+  "name": "keychain",
+  "version": "0.1.0",
+  "description": "Cross-platform guidance for developer-laptop credentials in OS-native secret stores.",
+  "author": { "name": "Agentic Marketplace" },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/keychain",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "skills": "./skills/"
+}

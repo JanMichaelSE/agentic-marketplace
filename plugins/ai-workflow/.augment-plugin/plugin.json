@@ -1,7 +1,0 @@
-{
-  "name": "ai-workflow",
-  "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, review, repair, Jira-native plan and checkpoint sync, draft PR publishing, and change summary handoff.",
-  "version": "1.4.5",
-  "author": { "name": "Vantor" },
-  "keywords": ["ai-workflow", "grill-me", "grill-with-docs", "grilling", "domain-modeling", "adr", "context", "create-execution-plan", "execution-plan", "create-implementation-slices", "run-workflow", "orchestration", "local-workflow", "jira-plan-import", "jira-plan-sync", "jira-checkpoint-sync", "jira", "jira-native", "checkpoint-sync", "implementation", "implement-scope", "refactor", "repair-findings", "repair", "review", "summarize-changes", "change-summary", "publish-draft-pr", "draft-pr", "slices", "workflow", "skills"]
-}

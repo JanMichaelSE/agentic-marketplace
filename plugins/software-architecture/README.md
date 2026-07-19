@@ -21,9 +21,9 @@ Installable plugin for stable architecture and domain-modeling guidance that hel
 Install from the `agentic-marketplace` marketplace:
 
 ```bash
-# Auggie
-auggie plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-auggie plugin install software-architecture@agentic-marketplace
+# Claude Code
+claude plugin marketplace add JanMichaelSE/agentic-marketplace
+claude plugin install software-architecture@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace

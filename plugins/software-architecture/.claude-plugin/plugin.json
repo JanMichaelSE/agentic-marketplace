@@ -1,0 +1,9 @@
+{
+  "name": "software-architecture",
+  "version": "1.0.0",
+  "description": "Architecture and domain-modeling skills for deep modules and safer active codebase changes.",
+  "author": { "name": "Vantor" },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/software-architecture",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "skills": "./skills/"
+}

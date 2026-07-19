@@ -7,7 +7,7 @@ description: Orchestrate an approved local ai-workflow from slices through imple
 
 Coordinate an approved local `.scratch/<feature-slug>/` workflow across the existing `ai-workflow` skills. This skill is a local orchestration contract for agents running in capable hosts; it does not replace `implement-scope`, `refactor`, `review`, `repair-findings`, or `summarize-changes`.
 
-The workflow is vendor-neutral and portable across local Codex, local Auggie, and future orchestration runtimes. Host-specific sub-agent support is an execution capability, not a required dependency.
+The workflow is vendor-neutral and portable across local Codex, local Claude Code, and future orchestration runtimes. Host-specific sub-agent support is an execution capability, not a required dependency.
 
 ## Boundaries
 
