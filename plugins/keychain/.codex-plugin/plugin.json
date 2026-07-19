@@ -1,0 +1,37 @@
+{
+  "name": "keychain",
+  "version": "0.1.0",
+  "description": "Cross-platform guidance for developer-laptop credentials in OS-native secret stores.",
+  "author": {
+    "name": "Agentic Marketplace"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/keychain",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "keychain",
+    "secrets",
+    "credentials",
+    "macos",
+    "linux",
+    "windows",
+    "security",
+    "secret-store"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Keychain",
+    "shortDescription": "Keep developer-laptop credentials in OS-native secret stores.",
+    "longDescription": "Cross-platform guidance for naming and safely using developer-laptop credentials with macOS Keychain, Linux secret stores, or Windows Credential Manager without exposing their values.",
+    "developerName": "Agentic Marketplace",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "How should I safely store this developer credential on my laptop?",
+      "Which local secret store should I use for this operating system?",
+      "Help me rotate the local copy of a developer credential without exposing it."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

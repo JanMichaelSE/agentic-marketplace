@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Correctness Review"
+  short_description: "Review whether tests prove what they claim"
+  default_prompt: "Use $test-correctness-review to review whether the added or updated tests are correctly implemented and actually verify the behavior they claim to test."

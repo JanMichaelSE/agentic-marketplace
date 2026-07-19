@@ -1,0 +1,38 @@
+{
+  "name": "infrastructure",
+  "version": "1.1.0",
+  "description": "Infrastructure guidance covering AWS cloud, Kubernetes, Terraform, and Helm rollout patterns.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/infrastructure",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "infrastructure",
+    "aws",
+    "cloud",
+    "terraform",
+    "kubernetes",
+    "helm",
+    "rollme",
+    "pod-restart",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Infrastructure",
+    "shortDescription": "AWS, Kubernetes, Terraform, and Helm rollout guidance.",
+    "longDescription": "Infrastructure guidance covering AWS cloud patterns, Kubernetes workload patterns, Helm pod-rollout annotations, and broader Terraform and infrastructure-as-code decisions.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Apply the AWS and cloud infrastructure patterns to this change.",
+      "Review this Kubernetes configuration against Kubernetes workload guidance.",
+      "Check this Terraform or cloud change for common risks."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

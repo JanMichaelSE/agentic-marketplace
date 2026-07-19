@@ -1,0 +1,24 @@
+{
+  "name": "atlassian",
+  "version": "1.0.0",
+  "description": "Vendor-neutral Jira workflow guidance and read-oriented Confluence research helpers.",
+  "author": { "name": "Agentic Marketplace" },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/atlassian",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": ["atlassian", "jira", "confluence", "acli", "adf", "research", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Atlassian",
+    "shortDescription": "Jira workflows and read-only Confluence research.",
+    "longDescription": "Use acli-backed Jira workflows with ADF-safe guidance, or inspect Confluence pages and saved source snapshots with local Node helpers.",
+    "developerName": "Agentic Marketplace",
+    "category": "Engineering",
+    "capabilities": ["Read", "Interactive", "Write"],
+    "defaultPrompt": [
+      "Create a Jira issue from these approved requirements.",
+      "Search Jira for issues assigned to me.",
+      "Inspect this Confluence page and summarize its headings and tables."
+    ],
+    "brandColor": "#0052CC"
+  }
+}

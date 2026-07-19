@@ -1,0 +1,4 @@
+interface:
+  display_name: "Force Pod Restarts"
+  short_description: "Apply a Helm rollme annotation to a specified application"
+  default_prompt: "Use $force-pod-restart-on-deploy to add the Helm rollme pod restart annotation to the requested app. Start with its local checkout; use GitHub organization discovery only for an explicitly authorized multi-repository rollout."

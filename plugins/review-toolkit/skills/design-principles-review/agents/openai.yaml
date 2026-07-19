@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Principles Review"
+  short_description: "Review code for SOLID and design quality"
+  default_prompt: "Use $design-principles-review to review this code for SOLID and software design principles."

@@ -1,0 +1,7 @@
+{
+  "name": "atlassian",
+  "description": "Vendor-neutral Jira workflow guidance and read-oriented Confluence research helpers.",
+  "version": "1.0.0",
+  "author": { "name": "Agentic Marketplace" },
+  "keywords": ["atlassian", "jira", "confluence", "acli", "adf", "research", "skills"]
+}

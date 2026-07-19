@@ -1,0 +1,49 @@
+{
+  "name": "development",
+  "version": "1.2.0",
+  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/development",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "planning",
+    "implementation",
+    "grilling",
+    "research",
+    "prototype",
+    "diagnosing-bugs",
+    "merge-conflicts",
+    "simplify-code",
+    "figma-mcp",
+    "webapp-testing",
+    "playwright",
+    "design",
+    "workflow",
+    "development",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Development",
+    "shortDescription": "Stable planning, implementation, testing, and handoff workflows.",
+    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, Figma-backed UI, local web testing, diagnostics, prototyping, research, merge resolution, and handoff.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Help me refine this feature's requirements and solution design.",
+      "Help me turn approved planning context into an execution plan and implementation slices with AI Workflow.",
+      "Help me work through this change test-first.",
+      "Help me simplify this code while preserving its behavior.",
+      "Help me implement this Figma-backed UI using an available MCP integration.",
+      "Help me verify this local web application with Playwright.",
+      "Review this implementation approach against our workflow guidance.",
+      "Help me prepare a PR overview for this branch."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "software-architecture",
+  "version": "1.0.0",
+  "description": "Stable architecture and domain-modeling skills for designing deep modules, maintaining domain language, and safely improving active codebase changes.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/software-architecture",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "software-architecture",
+    "codebase-design",
+    "domain-modeling",
+    "architecture-improvement",
+    "deep-modules",
+    "adr",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Software Architecture",
+    "shortDescription": "Architecture and domain-modeling guidance for deep modules and safer active changes.",
+    "longDescription": "Stable guidance for designing deep modules, maintaining project domain language and ADRs, and finding evidence-based architecture improvements within an active change.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Help me design a deep module with a clear interface and seam.",
+      "Help me sharpen this project's domain language and record a durable decision.",
+      "Find the smallest architecture improvement justified by this active change."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

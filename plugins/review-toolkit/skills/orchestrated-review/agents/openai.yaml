@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestrated Review"
+  short_description: "Run bundled code reviews and preserve each output"
+  default_prompt: "Use $orchestrated-review to run the bundled review suite on this code."

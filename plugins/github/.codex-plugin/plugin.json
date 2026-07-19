@@ -1,0 +1,36 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "GitHub collaboration skills for gh-based repository operations and reusable GitHub Actions workflow guidance.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/github",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "github",
+    "gh",
+    "pull-requests",
+    "issues",
+    "github-actions",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "GitHub repository, PR, and workflow guidance.",
+    "longDescription": "GitHub guidance for gh-based repository operations, pull requests, issues, workflow run inspection, and repository-first GitHub Actions design.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Review this pull request in GitHub and summarize the latest feedback.",
+      "Create a GitHub Actions workflow for this repository.",
+      "Inspect the latest workflow runs for this repository."
+    ],
+    "brandColor": "#24292F"
+  }
+}

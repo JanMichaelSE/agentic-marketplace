@@ -1,0 +1,80 @@
+{
+  "name": "agentic-marketplace",
+  "interface": {
+    "displayName": "Agentic Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "ai-workflow",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ai-workflow"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "atlassian",
+      "source": {
+        "source": "local",
+        "path": "./plugins/atlassian"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "development",
+      "source": {
+        "source": "local",
+        "path": "./plugins/development"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "experimental",
+      "source": {
+        "source": "local",
+        "path": "./plugins/experimental"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "github",
+      "source": {
+        "source": "local",
+        "path": "./plugins/github"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "infrastructure",
+      "source": {
+        "source": "local",
+        "path": "./plugins/infrastructure"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "keychain",
+      "source": {
+        "source": "local",
+        "path": "./plugins/keychain"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "review-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/review-toolkit"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "software-architecture",
+      "source": {
+        "source": "local",
+        "path": "./plugins/software-architecture"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

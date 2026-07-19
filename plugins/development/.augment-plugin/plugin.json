@@ -1,0 +1,7 @@
+{
+  "name": "development",
+  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
+  "version": "1.2.0",
+  "author": { "name": "Vantor" },
+  "keywords": ["planning", "design", "implementation", "grilling", "research", "prototype", "diagnosing-bugs", "merge-conflicts", "simplify-code", "figma-mcp", "webapp-testing", "playwright", "workflow", "development", "skills"]
+}

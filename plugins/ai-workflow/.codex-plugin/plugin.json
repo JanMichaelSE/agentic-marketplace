@@ -1,0 +1,68 @@
+{
+  "name": "ai-workflow",
+  "version": "1.4.5",
+  "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, review, repair, Jira-native plan and checkpoint sync, draft PR publishing, and change summary handoff.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/ai-workflow",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "ai-workflow",
+    "grill-me",
+    "grill-with-docs",
+    "grilling",
+    "domain-modeling",
+    "adr",
+    "context",
+    "create-execution-plan",
+    "execution-plan",
+    "create-implementation-slices",
+    "run-workflow",
+    "orchestration",
+    "local-workflow",
+    "jira-plan-import",
+    "jira-plan-sync",
+    "jira-checkpoint-sync",
+    "implementation",
+    "implement-scope",
+    "refactor",
+    "repair-findings",
+    "repair",
+    "review",
+    "summarize-changes",
+    "change-summary",
+    "publish-draft-pr",
+    "slices",
+    "workflow",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Workflow",
+    "shortDescription": "Grill plans, capture domain decisions, slice, orchestrate, sync Jira-native plans and checkpoints, implement, review, repair, publish draft PRs, and summarize AI-assisted work.",
+    "longDescription": "Vendor-neutral workflow skills for stress-testing plans, capturing confirmed domain decisions in local documentation, turning planning context into execution plans, approved implementation slices, local workflow orchestration, Jira-native planning and checkpoint synchronization, bounded implementation handoffs, scoped refactor summaries, repair-ready review summaries, validated repair summaries, explicit draft PR publishing, and concise change summary handoffs.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Use grill-me to interview me one question at a time and resolve this plan before creating an execution plan.",
+      "Use grill-with-docs to challenge this plan against the repository's domain language and documented decisions.",
+      "Use create-execution-plan to turn this planning context into an execution plan.",
+      "Use create-implementation-slices to break this execution plan into implementation slices.",
+      "Use run-workflow to coordinate approved slices through implementation, refactor, review, repair, and local human review handoff.",
+      "Use jira-plan-import to import an execution plan from a Jira Epic/Story description and slices from child Stories or Sub-tasks into local artifacts.",
+      "Use jira-plan-sync to sync an approved execution plan and selected slices into Jira descriptions and child work items.",
+      "Use jira-checkpoint-sync to sync implementation summaries, workflow checkpoints, terminal state, and optional draft PR backlinks into Jira.",
+      "Use implement-scope to implement this approved slice or concrete standalone request and write a handoff.",
+      "Use refactor to improve this implemented workflow or explicit boundary without changing behavior.",
+      "Use review to evaluate this implemented feature or code change and write a repair-ready summary.",
+      "Use repair-findings to repair eligible in-scope review findings and write a validation-backed summary.",
+      "Use summarize-changes to summarize implemented changes, review evidence, and validation in the standard PR overview format.",
+      "Use publish-draft-pr only after terminal workflow handoff and explicit authorization to publish a draft PR."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

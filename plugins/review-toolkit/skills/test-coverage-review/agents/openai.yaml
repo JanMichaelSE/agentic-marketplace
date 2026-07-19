@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Coverage Review"
+  short_description: "Review whether tests cover the changed code"
+  default_prompt: "Use $test-coverage-review to review whether the changed code is meaningfully covered by tests, and report where the existing relevant tests are located or say when none were found."

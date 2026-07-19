@@ -1,0 +1,37 @@
+{
+  "name": "experimental",
+  "version": "3.0.0",
+  "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
+  "author": {
+    "name": "Vantor"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/experimental",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "experimental",
+    "preview",
+    "incubator",
+    "code-review",
+    "improve-repo-harness",
+    "writing-great-skills",
+    "zoom-out",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Experimental",
+    "shortDescription": "Focused preview skills retained before promotion into stable plugins.",
+    "longDescription": "A focused staging plugin for four experimental skills that teams can try before those skills are moved into a stable, long-term plugin group.",
+    "developerName": "Vantor",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Try this experimental skill and tell me where it helps or falls short.",
+      "Use one of the preview skills in this plugin to explore a new workflow.",
+      "Help evaluate whether this experimental skill is ready for promotion into a stable plugin."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

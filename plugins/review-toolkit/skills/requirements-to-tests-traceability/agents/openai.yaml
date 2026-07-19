@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirements to Tests Traceability"
+  short_description: "Map requirements and acceptance criteria to tests"
+  default_prompt: "Use $requirements-to-tests-traceability to map the requirements for this change to the tests that verify them."

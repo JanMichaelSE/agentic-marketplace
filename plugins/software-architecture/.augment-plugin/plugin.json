@@ -1,0 +1,7 @@
+{
+  "name": "software-architecture",
+  "description": "Stable architecture and domain-modeling skills for designing deep modules, maintaining domain language, and safely improving active codebase changes.",
+  "version": "1.0.0",
+  "author": { "name": "Vantor" },
+  "keywords": ["software-architecture", "codebase-design", "domain-modeling", "architecture-improvement", "deep-modules", "adr", "skills"]
+}
