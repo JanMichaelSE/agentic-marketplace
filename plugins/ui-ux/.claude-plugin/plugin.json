@@ -1,0 +1,11 @@
+{
+  "name": "ui-ux",
+  "version": "1.0.0",
+  "description": "UI/UX design intelligence for web and mobile interface design, implementation, and review.",
+  "author": {
+    "name": "Agentic Marketplace"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/ui-ux",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "skills": "./skills/"
+}

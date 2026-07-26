@@ -14,6 +14,7 @@
     { "name": "infrastructure", "source": "./plugins/infrastructure" },
     { "name": "keychain", "source": "./plugins/keychain" },
     { "name": "review-toolkit", "source": "./plugins/review-toolkit" },
-    { "name": "software-architecture", "source": "./plugins/software-architecture" }
+    { "name": "software-architecture", "source": "./plugins/software-architecture" },
+    { "name": "ui-ux", "source": "./plugins/ui-ux" }
   ]
 }

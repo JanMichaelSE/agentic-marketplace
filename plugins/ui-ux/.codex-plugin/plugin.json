@@ -1,0 +1,40 @@
+{
+  "name": "ui-ux",
+  "version": "1.0.0",
+  "description": "UI/UX design intelligence for web and mobile interface design, implementation, and review.",
+  "author": {
+    "name": "Agentic Marketplace"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/ui-ux",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "ui",
+    "ux",
+    "frontend",
+    "design-system",
+    "accessibility",
+    "responsive-design",
+    "typography",
+    "color",
+    "animation",
+    "mobile",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UI/UX",
+    "shortDescription": "Data-backed interface design intelligence for web and mobile.",
+    "longDescription": "UI/UX guidance for selecting styles, color and typography systems, interaction and accessibility patterns, responsive layouts, motion, charts, and stack-specific implementation practices across web and native applications.",
+    "developerName": "Agentic Marketplace",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Create a design system for this product and its audience.",
+      "Review this UI for accessibility, responsive design, and interaction issues.",
+      "Recommend UI patterns and stack guidance for this screen."
+    ],
+    "brandColor": "#7C3AED"
+  }
+}

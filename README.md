@@ -34,6 +34,7 @@ claude plugin install infrastructure@agentic-marketplace
 claude plugin install keychain@agentic-marketplace
 claude plugin install review-toolkit@agentic-marketplace
 claude plugin install software-architecture@agentic-marketplace
+claude plugin install ui-ux@agentic-marketplace
 ```
 
 Use `/plugin` in Claude Code to inspect installed plugins, enable or disable them, and refresh the marketplace.
@@ -58,6 +59,7 @@ codex plugin add infrastructure@agentic-marketplace
 codex plugin add keychain@agentic-marketplace
 codex plugin add review-toolkit@agentic-marketplace
 codex plugin add software-architecture@agentic-marketplace
+codex plugin add ui-ux@agentic-marketplace
 ```
 
 Use `/plugins` in Codex to inspect and enable installed plugins.
@@ -77,6 +79,7 @@ Detailed purpose and usage notes live in the plugin README and each `SKILL.md`. 
 | [keychain](plugins/keychain/README.md) | [macos-keychain-secrets](plugins/keychain/skills/macos-keychain-secrets/SKILL.md) |
 | [review-toolkit](plugins/review-toolkit/README.md) | [design-principles-review](plugins/review-toolkit/skills/design-principles-review/SKILL.md), [draft-code-review-comment](plugins/review-toolkit/skills/draft-code-review-comment/SKILL.md), [multi-agent-code-review](plugins/review-toolkit/skills/multi-agent-code-review/SKILL.md), [orchestrated-review](plugins/review-toolkit/skills/orchestrated-review/SKILL.md), [pr-comment-addressed-check](plugins/review-toolkit/skills/pr-comment-addressed-check/SKILL.md), [requirements-to-tests-traceability](plugins/review-toolkit/skills/requirements-to-tests-traceability/SKILL.md), [security-review](plugins/review-toolkit/skills/security-review/SKILL.md), [test-correctness-review](plugins/review-toolkit/skills/test-correctness-review/SKILL.md), [test-coverage-review](plugins/review-toolkit/skills/test-coverage-review/SKILL.md) |
 | [software-architecture](plugins/software-architecture/README.md) | [codebase-design](plugins/software-architecture/skills/codebase-design/SKILL.md), [domain-modeling](plugins/software-architecture/skills/domain-modeling/SKILL.md), [improve-codebase-architecture](plugins/software-architecture/skills/improve-codebase-architecture/SKILL.md) |
+| [ui-ux](plugins/ui-ux/README.md) | [ui-ux-pro-max](plugins/ui-ux/skills/ui-ux-pro-max/SKILL.md) |
 
 ## Plugin Catalog
 
@@ -91,6 +94,7 @@ Detailed purpose and usage notes live in the plugin README and each `SKILL.md`. 
 | [keychain](plugins/keychain/README.md) | 1 skill | Cross-platform developer-laptop credential storage guidance. |
 | [review-toolkit](plugins/review-toolkit/README.md) | 9 skills | Design, code, security, review-comment lifecycle, requirements, test correctness, test coverage, and orchestrated reviews. |
 | [software-architecture](plugins/software-architecture/README.md) | 3 skills | Deep-module design, domain modeling, ADR, and architecture-improvement guidance. |
+| [ui-ux](plugins/ui-ux/README.md) | 1 skill | Data-backed UI/UX design intelligence for web and mobile interface design, implementation, and review. |
 
 ## Repository Layout
 
@@ -108,6 +112,7 @@ agentic-marketplace/
 │   ├── keychain/
 │   ├── review-toolkit/
 │   ├── software-architecture/
+│   ├── ui-ux/
 │   └── README.md                      # Plugin scaffold guidance
 ├── AGENTS.md                          # Maintenance instructions for agents
 └── README.md

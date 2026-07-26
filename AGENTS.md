@@ -43,6 +43,7 @@ Current plugin groups:
 - `plugins/keychain/` contains cross-platform developer-laptop credential-storage guidance.
 - `plugins/review-toolkit/` contains code, design, security, test-coverage, test-correctness, and orchestrated review skills.
 - `plugins/software-architecture/` contains architecture vocabulary, domain modeling, and architecture-improvement guidance.
+- `plugins/ui-ux/` contains data-backed UI/UX design intelligence for web and mobile interface design, implementation, and review.
 
 ## How Plugins Work
 
