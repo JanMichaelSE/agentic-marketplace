@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "GitHub collaboration skills for gh-based repository operations and reusable GitHub Actions workflow guidance.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/github",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -20,7 +20,7 @@
     "displayName": "GitHub",
     "shortDescription": "GitHub repository, PR, and workflow guidance.",
     "longDescription": "GitHub guidance for gh-based repository operations, pull requests, issues, workflow run inspection, and repository-first GitHub Actions design.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive",

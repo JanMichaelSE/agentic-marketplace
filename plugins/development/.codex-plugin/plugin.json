@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Stable cross-stack planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/development",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -29,7 +29,7 @@
     "displayName": "Development",
     "shortDescription": "Stable planning, implementation, testing, and handoff workflows.",
     "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, Figma-backed UI, local web testing, diagnostics, prototyping, research, merge resolution, and handoff.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive"

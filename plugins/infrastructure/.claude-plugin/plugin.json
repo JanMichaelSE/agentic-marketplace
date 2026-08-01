@@ -2,7 +2,7 @@
   "name": "infrastructure",
   "version": "1.1.0",
   "description": "Infrastructure guidance covering AWS cloud, Kubernetes, Terraform, and Helm rollout patterns.",
-  "author": { "name": "Vantor" },
+  "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/infrastructure",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
   "skills": "./skills/"

@@ -3,7 +3,7 @@
   "version": "1.4.5",
   "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, review, repair, Jira-native plan and checkpoint sync, draft PR publishing, and change summary handoff.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/ai-workflow",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -42,7 +42,7 @@
     "displayName": "AI Workflow",
     "shortDescription": "Grill plans, capture domain decisions, slice, orchestrate, sync Jira-native plans and checkpoints, implement, review, repair, publish draft PRs, and summarize AI-assisted work.",
     "longDescription": "Vendor-neutral workflow skills for stress-testing plans, capturing confirmed domain decisions in local documentation, turning planning context into execution plans, approved implementation slices, local workflow orchestration, Jira-native planning and checkpoint synchronization, bounded implementation handoffs, scoped refactor summaries, repair-ready review summaries, validated repair summaries, explicit draft PR publishing, and concise change summary handoffs.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive"

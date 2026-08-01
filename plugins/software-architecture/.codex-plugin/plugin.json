@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Stable architecture and domain-modeling skills for designing deep modules, maintaining domain language, and safely improving active codebase changes.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/software-architecture",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -21,7 +21,7 @@
     "displayName": "Software Architecture",
     "shortDescription": "Architecture and domain-modeling guidance for deep modules and safer active changes.",
     "longDescription": "Stable guidance for designing deep modules, maintaining project domain language and ADRs, and finding evidence-based architecture improvements within an active change.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive"

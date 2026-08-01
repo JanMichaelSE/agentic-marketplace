@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/experimental",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -22,7 +22,7 @@
     "displayName": "Experimental",
     "shortDescription": "Focused preview skills retained before promotion into stable plugins.",
     "longDescription": "A focused staging plugin for four experimental skills that teams can try before those skills are moved into a stable, long-term plugin group.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive"

@@ -2,7 +2,7 @@
   "name": "github",
   "version": "1.0.0",
   "description": "GitHub collaboration skills for gh-based repository operations and GitHub Actions guidance.",
-  "author": { "name": "Vantor" },
+  "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/github",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
   "skills": "./skills/"

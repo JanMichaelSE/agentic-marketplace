@@ -2,7 +2,7 @@
   "name": "development",
   "version": "1.2.0",
   "description": "Cross-stack planning, implementation, diagnostics, prototyping, Figma UI, web testing, simplification, and handoff guidance.",
-  "author": { "name": "Vantor" },
+  "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/development",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
   "skills": "./skills/"

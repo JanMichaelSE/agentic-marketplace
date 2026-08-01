@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Code, design, security, review-lifecycle, test-coverage, and test-correctness review skills. Includes standalone security-review and bundled multi-lens reviews.",
   "author": {
-    "name": "Vantor"
+    "name": "Jan Montalvo"
   },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/review-toolkit",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
@@ -28,7 +28,7 @@
     "displayName": "Review Toolkit",
     "shortDescription": "Code, design, security, review-comment, test coverage, and test correctness skills.",
     "longDescription": "A review skill bundle for standalone security review, design-principles review, review-comment drafting and verification, requirements-to-tests traceability, test coverage review, test correctness review, multi-agent code review, and orchestrated multi-lens reviews. Most skills work standalone; orchestrated-review requires the agentic-sdlc plugin from ai-marketplace for its remaining external review lenses.",
-    "developerName": "Vantor",
+    "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
       "Interactive"

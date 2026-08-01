@@ -2,7 +2,7 @@
   "name": "experimental",
   "version": "3.0.0",
   "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
-  "author": { "name": "Vantor" },
+  "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/experimental",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
   "skills": "./skills/"
