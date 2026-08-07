@@ -28,7 +28,9 @@ agentic-marketplace/
 │   │   ├── README.md
 │   │   └── skills/
 │   │       └── <skill-name>/
-│   │           └── SKILL.md
+│   │           ├── SKILL.md
+│   │           └── agents/
+│   │               └── openai.yaml
 └── README.md
 ```
 
@@ -55,6 +57,7 @@ Each installable marketplace plugin should contain:
 - `.claude-plugin/plugin.json` for Claude Code plugin metadata.
 - `README.md` describing the plugin and its included skills.
 - `skills/<skill-name>/SKILL.md` files containing the actual skill instructions.
+- `skills/<skill-name>/agents/openai.yaml` files containing Codex/OpenAI UI metadata and, for user-invoked skills, the matching implicit-invocation policy.
 
 The root marketplace manifests point clients at the plugin folders:
 
@@ -77,6 +80,12 @@ description: Short trigger and usage description.
 ```
 
 The `name` should match the skill directory name. The `description` should be specific enough for an agent to know when to invoke it.
+
+Every skill directory must also include `agents/openai.yaml`. Give it a
+human-facing `interface.display_name` and `interface.short_description`; use
+`policy.allow_implicit_invocation: false` when `SKILL.md` sets
+`disable-model-invocation: true`, and otherwise omit that policy block so Codex
+can discover model-invoked skills.
 
 ## Documentation Expectations
 

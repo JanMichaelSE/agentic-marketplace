@@ -1,0 +1,3 @@
+interface:
+  display_name: "Summarize Changes"
+  short_description: "Create a concise change-summary handoff"

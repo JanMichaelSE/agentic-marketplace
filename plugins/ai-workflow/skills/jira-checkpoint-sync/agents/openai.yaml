@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jira Checkpoint Sync"
+  short_description: "Sync workflow checkpoints into Jira"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "GitHub"
+  short_description: "Operate GitHub repositories with the CLI"

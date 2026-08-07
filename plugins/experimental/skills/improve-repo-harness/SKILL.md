@@ -1,6 +1,7 @@
 ---
 name: improve-repo-harness
-description: Harness: MUST invoke only when a user explicitly asks to assess or improve agent guidance, repository navigation, validation discoverability, bootstrap documentation, or CONTEXT/ADR conventions. Do not invoke autonomously.
+description: "Harness: MUST invoke only when a user explicitly asks to assess or improve agent guidance, repository navigation, validation discoverability, bootstrap documentation, or CONTEXT/ADR conventions. Do not invoke autonomously."
+disable-model-invocation: true
 ---
 
 # Improve Repo Harness

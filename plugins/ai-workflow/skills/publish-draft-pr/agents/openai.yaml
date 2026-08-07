@@ -1,0 +1,3 @@
+interface:
+  display_name: "Publish Draft PR"
+  short_description: "Publish an authorized draft pull request"

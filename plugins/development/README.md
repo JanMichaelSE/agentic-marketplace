@@ -11,7 +11,7 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 | Skill | Purpose | When to Use |
 |------|---------|-------------|
 | **inception-planning** | Guide requirements analysis, scoping, and solution design | Starting a feature or refining requirements |
-| **grilling** | Resolve plan and design decisions through a one-question-at-a-time interview | Stress-testing a plan or design |
+| **grilling** | Resolve plan and design decisions through a round-by-round frontier interview | Stress-testing a plan or design |
 | **research** | Research a technical question from primary sources and write cited findings | Investigating a technical decision or unknown |
 
 ### Implementation

@@ -1,0 +1,3 @@
+interface:
+  display_name: "macOS Keychain Secrets"
+  short_description: "Handle laptop credentials without exposure"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "ACLI Jira"
+  short_description: "Manage Jira issues safely with ACLI"

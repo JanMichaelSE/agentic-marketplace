@@ -1,0 +1,3 @@
+interface:
+  display_name: "Repair Findings"
+  short_description: "Repair eligible review findings"

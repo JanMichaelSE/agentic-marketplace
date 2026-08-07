@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jira Plan Import"
+  short_description: "Import Jira plans into local artifacts"

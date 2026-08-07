@@ -73,7 +73,7 @@ Detailed purpose and usage notes live in the plugin README and each `SKILL.md`. 
 | [ai-workflow](plugins/ai-workflow/README.md) | [grill-me](plugins/ai-workflow/skills/grill-me/SKILL.md), [grill-with-docs](plugins/ai-workflow/skills/grill-with-docs/SKILL.md), [create-execution-plan](plugins/ai-workflow/skills/create-execution-plan/SKILL.md), [create-implementation-slices](plugins/ai-workflow/skills/create-implementation-slices/SKILL.md), [run-workflow](plugins/ai-workflow/skills/run-workflow/SKILL.md), [jira-plan-import](plugins/ai-workflow/skills/jira-plan-import/SKILL.md), [jira-plan-sync](plugins/ai-workflow/skills/jira-plan-sync/SKILL.md), [jira-checkpoint-sync](plugins/ai-workflow/skills/jira-checkpoint-sync/SKILL.md), [implement-scope](plugins/ai-workflow/skills/implement-scope/SKILL.md), [refactor](plugins/ai-workflow/skills/refactor/SKILL.md), [review](plugins/ai-workflow/skills/review/SKILL.md), [repair-findings](plugins/ai-workflow/skills/repair-findings/SKILL.md), [summarize-changes](plugins/ai-workflow/skills/summarize-changes/SKILL.md), [publish-draft-pr](plugins/ai-workflow/skills/publish-draft-pr/SKILL.md) |
 | [atlassian](plugins/atlassian/README.md) | [acli-jira](plugins/atlassian/skills/acli-jira/SKILL.md), [confluence-research](plugins/atlassian/skills/confluence-research/SKILL.md) |
 | [development](plugins/development/README.md) | [inception-planning](plugins/development/skills/inception-planning/SKILL.md), [grilling](plugins/development/skills/grilling/SKILL.md), [research](plugins/development/skills/research/SKILL.md), [construction-implementation](plugins/development/skills/construction-implementation/SKILL.md), [tdd](plugins/development/skills/tdd/SKILL.md), [prototype](plugins/development/skills/prototype/SKILL.md), [diagnosing-bugs](plugins/development/skills/diagnosing-bugs/SKILL.md), [resolving-merge-conflicts](plugins/development/skills/resolving-merge-conflicts/SKILL.md), [simplify-code](plugins/development/skills/simplify-code/SKILL.md), [figma-mcp](plugins/development/skills/figma-mcp/SKILL.md), [webapp-testing](plugins/development/skills/webapp-testing/SKILL.md), [handoff](plugins/development/skills/handoff/SKILL.md), [create-pr-overview](plugins/development/skills/create-pr-overview/SKILL.md) |
-| [experimental](plugins/experimental/README.md) | [code-review](plugins/experimental/skills/code-review/SKILL.md), [improve-repo-harness](plugins/experimental/skills/improve-repo-harness/SKILL.md), [writing-great-skills](plugins/experimental/skills/writing-great-skills/SKILL.md), [zoom-out](plugins/experimental/skills/zoom-out/SKILL.md) |
+| [experimental](plugins/experimental/README.md) | [code-review](plugins/experimental/skills/code-review/SKILL.md), [improve-repo-harness](plugins/experimental/skills/improve-repo-harness/SKILL.md), [writing-for-agents](plugins/experimental/skills/writing-for-agents/SKILL.md), [wait-what](plugins/experimental/skills/wait-what/SKILL.md), [zoom-out](plugins/experimental/skills/zoom-out/SKILL.md) |
 | [github](plugins/github/README.md) | [github](plugins/github/skills/github/SKILL.md), [github-actions](plugins/github/skills/github-actions/SKILL.md) |
 | [infrastructure](plugins/infrastructure/README.md) | [aws-patterns](plugins/infrastructure/skills/aws-patterns/SKILL.md), [kubernetes-patterns](plugins/infrastructure/skills/kubernetes-patterns/SKILL.md), [force-pod-restart-on-deploy](plugins/infrastructure/skills/force-pod-restart-on-deploy/SKILL.md) |
 | [keychain](plugins/keychain/README.md) | [macos-keychain-secrets](plugins/keychain/skills/macos-keychain-secrets/SKILL.md) |
@@ -88,7 +88,7 @@ Detailed purpose and usage notes live in the plugin README and each `SKILL.md`. 
 | [ai-workflow](plugins/ai-workflow/README.md) | 14 skills | Plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, review, repair, Jira-native sync, publishing, and change-summary handoff workflow. |
 | [atlassian](plugins/atlassian/README.md) | 2 skills | Vendor-neutral Jira lifecycle guidance and read-oriented Confluence research. |
 | [development](plugins/development/README.md) | 13 skills | Planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, simplification, research, merge-resolution, and handoff workflows. |
-| [experimental](plugins/experimental/README.md) | 4 skills | Focused preview skills retained while they gather feedback. |
+| [experimental](plugins/experimental/README.md) | 5 skills | Focused preview skills retained while they gather feedback. |
 | [github](plugins/github/README.md) | 2 skills | GitHub CLI repository operations and repository-first GitHub Actions guidance. |
 | [infrastructure](plugins/infrastructure/README.md) | 3 skills | AWS, Kubernetes, Terraform, cloud infrastructure, and Helm rollout patterns. |
 | [keychain](plugins/keychain/README.md) | 1 skill | Cross-platform developer-laptop credential storage guidance. |
@@ -129,6 +129,8 @@ plugins/<plugin-name>/
 ```
 
 All current plugins support both Claude Code and Codex and use the shared `skills/` layout.
+Each skill includes a client-neutral `SKILL.md` plus `agents/openai.yaml` for
+Codex/OpenAI discovery and UI metadata.
 
 ## Contributing
 

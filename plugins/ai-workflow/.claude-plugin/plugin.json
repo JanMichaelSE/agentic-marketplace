@@ -1,6 +1,6 @@
 {
   "name": "ai-workflow",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "description": "Stable AI workflow skills for planning, slicing, implementation, review, repair, Jira sync, publishing, and handoff.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/ai-workflow",

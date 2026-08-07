@@ -1,0 +1,3 @@
+interface:
+  display_name: "Create Implementation Slices"
+  short_description: "Split an approved plan into work slices"

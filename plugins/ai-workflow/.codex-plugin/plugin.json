@@ -1,6 +1,6 @@
 {
   "name": "ai-workflow",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, review, repair, Jira-native plan and checkpoint sync, draft PR publishing, and change summary handoff.",
   "author": {
     "name": "Jan Montalvo"
@@ -12,6 +12,7 @@
     "grill-me",
     "grill-with-docs",
     "grilling",
+    "frontier",
     "domain-modeling",
     "adr",
     "context",
@@ -48,7 +49,7 @@
       "Interactive"
     ],
     "defaultPrompt": [
-      "Use grill-me to interview me one question at a time and resolve this plan before creating an execution plan.",
+      "Use grill-me to interview me in rounds and resolve this plan before creating an execution plan.",
       "Use grill-with-docs to challenge this plan against the repository's domain language and documented decisions.",
       "Use create-execution-plan to turn this planning context into an execution plan.",
       "Use create-implementation-slices to break this execution plan into implementation slices.",

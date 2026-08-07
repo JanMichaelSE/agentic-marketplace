@@ -1,6 +1,6 @@
 {
   "name": "development",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Stable cross-stack planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
   "author": {
     "name": "Jan Montalvo"

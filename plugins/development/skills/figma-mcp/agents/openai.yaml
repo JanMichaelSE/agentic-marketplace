@@ -1,0 +1,3 @@
+interface:
+  display_name: "Figma MCP"
+  short_description: "Implement or compare Figma-backed UI"

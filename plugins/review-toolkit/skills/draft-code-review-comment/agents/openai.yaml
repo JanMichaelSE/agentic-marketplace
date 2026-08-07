@@ -1,0 +1,3 @@
+interface:
+  display_name: "Draft Code Review Comment"
+  short_description: "Turn concerns into concise review comments"

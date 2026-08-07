@@ -1,0 +1,3 @@
+interface:
+  display_name: "Jira Plan Sync"
+  short_description: "Sync approved plans and slices to Jira"

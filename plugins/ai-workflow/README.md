@@ -6,8 +6,8 @@ Stable vendor-neutral workflow skills for turning planning context into implemen
 
 | Skill | Status | Purpose | When to Use |
 |------|--------|---------|-------------|
-| [**grill-me**](skills/grill-me/SKILL.md) | Available | Resolve plan or design decisions through a focused interview | Stress-testing planning context before creating an execution plan |
-| [**grill-with-docs**](skills/grill-with-docs/SKILL.md) | Available | Resolve planning decisions against domain language and documented architecture | Stress-testing planning context against `CONTEXT.md` and ADRs before creating an execution plan |
+| [**grill-me**](skills/grill-me/SKILL.md) | Available | Start a deliberate, round-by-round plan or design interview | Sharpening planning context before creating an execution plan |
+| [**grill-with-docs**](skills/grill-with-docs/SKILL.md) | Available | Start a deliberate interview that records confirmed domain decisions | Stress-testing planning context against domain language and ADRs before creating an execution plan |
 | [**create-execution-plan**](skills/create-execution-plan/SKILL.md) | Available | Create `.scratch/<feature-slug>/execution-plan.md` from planning context | Moving from idea, PRD, ticket, or conversation into an implementation source of truth |
 | [**create-implementation-slices**](skills/create-implementation-slices/SKILL.md) | Available | Break an execution plan into approved autonomous implementation slices | Preparing bounded implementation work |
 | [**run-workflow**](skills/run-workflow/SKILL.md) | Available | Orchestrate approved slices through implementation, refactor, review, repair, and engineer handoff | Coordinating a complete local workflow after approved slices exist |
@@ -42,6 +42,11 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
 - `jira-checkpoint-sync` updates mapped child work item descriptions with implementation summaries and comments on the source Epic or Story for authorized workflow checkpoints.
 - `.scratch/<feature-slug>/jira/sync-state.json` records source issue, mode, child issue mappings, artifact hashes, checkpoint destinations, and blockers.
 - Jira sync is explicit and separate from `run-workflow`; integration between these skills should be planned before changing the orchestration contract.
+
+## Cross-plugin dependencies
+
+- `grill-me` delegates the interview to Development's [grilling](../development/skills/grilling/SKILL.md) skill.
+- `grill-with-docs` delegates the interview to `grilling` and records confirmed terminology and ADRs through Software Architecture's [domain-modeling](../software-architecture/skills/domain-modeling/SKILL.md) skill. Install those plugins alongside AI Workflow when using either entry point.
 
 ## Artifact Layout
 

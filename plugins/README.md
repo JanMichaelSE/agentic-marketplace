@@ -33,7 +33,7 @@ codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
 
 If a skill is still being evaluated, place it under `plugins/experimental` first.
 
-When importing a skill from a client-specific layout, convert it into the shared `plugins/<plugin>/skills/<skill-name>/` layout and keep any supporting reference files beside `SKILL.md`. That preserves compatibility with both Claude Code and Codex as long as the target plugin keeps both client manifests.
+When importing a skill from a client-specific layout, convert it into the shared `plugins/<plugin>/skills/<skill-name>/` layout, keep supporting reference files beside `SKILL.md`, and add `agents/openai.yaml` with the human-facing Codex/OpenAI metadata. For a user-invoked skill, pair `disable-model-invocation: true` in `SKILL.md` with `policy.allow_implicit_invocation: false` in that metadata. That preserves compatibility with both Claude Code and Codex as long as the target plugin keeps both client manifests.
 
 Once the skill has been tried by other users and the shape is stable, it can be promoted into a more permanent plugin group.
 

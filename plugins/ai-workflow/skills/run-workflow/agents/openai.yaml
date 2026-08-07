@@ -1,0 +1,3 @@
+interface:
+  display_name: "Run Workflow"
+  short_description: "Run approved slices through local workflow"

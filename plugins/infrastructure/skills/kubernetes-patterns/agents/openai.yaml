@@ -1,0 +1,3 @@
+interface:
+  display_name: "Kubernetes Patterns"
+  short_description: "Configure reliable Kubernetes workloads"

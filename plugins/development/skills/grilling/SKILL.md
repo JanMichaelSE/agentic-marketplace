@@ -1,33 +1,40 @@
 ---
 name: grilling
-description: Run a one-question-at-a-time interview that resolves plan or design decisions and their dependencies. Use when a user wants to stress-test a plan, decision, or design before acting, or asks to be grilled.
+description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any "grill" trigger phrases.
 ---
 
 # Grilling
 
-Use this reusable interview loop to reach a shared understanding of a plan,
-decision, or design before acting on it.
+Interview the user relentlessly until you reach a shared understanding. Map
+this as a **design tree**: every decision branches into the decisions that hang
+off it.
 
-## Process
+Work the tree in **rounds**. The **frontier** is every decision whose
+prerequisites are already settled — the questions you can ask now without
+guessing at answers you have not heard yet. Ask the whole frontier in one
+round: number each question and give your recommended answer. Then wait for the
+user's answers before the next round.
 
-1. Explore the codebase, documentation, and supplied context for facts before
-   asking about them. Do not make the user answer questions the repository can
-   answer.
-2. Identify the unresolved decisions and their dependencies. Start with the
-   decision that unblocks the next branch of the design tree.
-3. Ask exactly one focused question at a time. Explain why it matters and give
-   a recommended answer, then wait for the user's response before continuing.
-4. Stress-test the response with concrete constraints, edge cases, ownership,
-   failure modes, and effects on the remaining decisions.
-5. Summarize the resolved decisions and open questions. Do not enact the plan
-   until the user confirms that the shared understanding is complete.
+Each question should be formatted like so:
 
-## Fact-Finding Versus Decisions
+```
+❓ **Q1** - **<question title>**: <question body, which can include multiple paragraphs and choices>
 
-- **Facts** come from repository exploration, documentation, existing tests,
-  or other available evidence. Verify them rather than asking the user.
-- **Decisions** express intent, trade-offs, priorities, or acceptable risk.
-  Put each decision to the user and wait for their answer.
+➡️ <your recommended answer>
+```
 
-Keep questions small and sequential. Bundling multiple decisions into one
-question makes the conversation harder to answer and obscures dependencies.
+Each round reshapes the tree — settled decisions push the frontier outward and
+unblock questions that depended on them. Recompute the frontier and ask the
+next round. A question whose answer depends on another question still open in
+this round belongs to a later round, not this one.
+
+Finding **facts** is your job, never the user's. When a frontier question needs
+a fact from the environment (filesystem, tools, and so on), dispatch a
+sub-agent to find it rather than asking the user. Do not block on it: a running
+exploration is an unsettled prerequisite, so only its downstream questions wait
+for the result — ask the rest of the frontier now. The **decisions** are the
+user's: put each to them and wait.
+
+The session is done when the frontier is empty: every branch of the design tree
+has been visited and nothing remains silently assumed. Do not act until the
+user confirms that you have reached a shared understanding.

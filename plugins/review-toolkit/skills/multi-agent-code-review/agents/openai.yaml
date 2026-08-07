@@ -1,4 +1,4 @@
 interface:
   display_name: "Multi-Agent Code Review"
-  short_description: "Run a parallel review by assigning one review point per child agent"
+  short_description: "Run parallel reviews with focused child agents"
   default_prompt: "Use $multi-agent-code-review to review this code change with multiple focused sub-agents, one per requested review point."

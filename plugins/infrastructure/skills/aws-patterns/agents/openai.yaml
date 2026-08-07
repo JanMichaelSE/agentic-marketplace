@@ -1,0 +1,3 @@
+interface:
+  display_name: "AWS Patterns"
+  short_description: "Apply reliable AWS and Terraform patterns"

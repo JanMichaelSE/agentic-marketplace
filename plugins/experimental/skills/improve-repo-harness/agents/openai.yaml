@@ -1,0 +1,5 @@
+interface:
+  display_name: "Improve Repo Harness"
+  short_description: "Improve durable guidance and repository navigation"
+policy:
+  allow_implicit_invocation: false
