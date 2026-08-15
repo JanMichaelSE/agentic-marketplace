@@ -36,8 +36,7 @@ Feature-root input is selection input only. If the user supplies only the featur
 Load these references before running the corresponding workflow stage:
 
 - [`implementation-batching.md`](references/implementation-batching.md) for dependency order, write-boundary checks, parallel safety, and concurrency groups.
-- [`review-repair-cycle.md`](references/review-repair-cycle.md) for the bounded review, response, repair, and re-review loop.
-- [`response-artifact-template.md`](references/response-artifact-template.md) for classifying review findings as `QUEUED_FOR_REPAIR`, `JUSTIFIED`, `DEFERRED`, or `HUMAN_REQUIRED`.
+- [`review-repair-cycle.md`](references/review-repair-cycle.md) for the default one-pass review and repair flow and explicit post-repair re-review.
 - [`worker-prompt-packets.md`](references/worker-prompt-packets.md) for implementation worker, review lane, refactor, repair, and summary invocation packets.
 - [`run-summary-template.md`](references/run-summary-template.md) for the terminal local engineer review handoff.
 - [`example-run-summary.md`](references/example-run-summary.md) for a concise run-state and resume example.
@@ -59,7 +58,7 @@ Record the discovery mode and any fallback reason in the run summary.
 
 ## Process
 
-1. Confirm workflow mode, feature root, slice selection source, review target, max review cycles, and local output paths.
+1. Confirm workflow mode, feature root, slice selection source, review target, whether a post-repair re-review is explicitly requested, and local output paths.
 2. Inspect current git state and report tracked modifications plus relevant untracked files.
 3. Rediscover repo guardrails, validation expectations, nearby skill patterns, and the supplied execution plan.
 4. Read the execution plan and every supplied or derived slice file fully.
@@ -73,21 +72,18 @@ Record the discovery mode and any fallback reason in the run summary.
 12. Collect implementation summaries from `.scratch/<feature-slug>/implementation/`.
 13. Run one `refactor` pass after all implementation slices complete. Refactor runs once for the complete implemented workflow, not once per slice.
 14. Run review cycle 1 with the existing `review` contract and the complete workflow change target.
-15. Prefer one review lane per enabled lens when host sub-agent support is available.
-16. Use parent-orchestrated review lanes when nested delegation is unavailable: the parent coordinator starts one lane per enabled lens, then supplies those lane results to `review` as `parent-orchestrated-lanes`.
+15. Prefer one review lane per enabled axis when host sub-agent support is available.
+16. Use parent-orchestrated review lanes when nested delegation is unavailable: the parent coordinator starts one lane per enabled axis, then supplies those lane results to `review` as `parent-orchestrated-lanes`.
 17. If review returns `PASS`, run `summarize-changes` for the local engineer review handoff.
-18. If review returns `REPAIR_REQUIRED` before the max cycle limit, write a response artifact that classifies findings as queued for repair, justified, deferred, or human-required.
-19. Require evidence-backed justifications. Do not auto-justify critical or high security findings. High functional, data-integrity, or contract findings require concrete governing context or a human decision before acceptance.
-20. Run one single-pass, single-agent `repair-findings` pass for automated-repair eligible findings only.
-21. Re-run review once with the prior review summary, response artifact, repair summary, and current change target.
-22. If the final review state is `PASS`, run `summarize-changes` for the local engineer review handoff. If the final state is `REPAIR_REQUIRED`, `HUMAN_REQUIRED`, or `BLOCKED`, run `summarize-changes` only when enough change-target evidence exists to produce a useful local handoff without masking the terminal state.
-23. Stop on a terminal state and produce or update the local run summary for engineer review.
+18. If review returns `REPAIR_REQUIRED`, run one single-pass, single-agent `repair-findings` pass directly from the review summary for automated-repair eligible findings only.
+19. When no post-repair re-review was requested, derive the terminal state from the repair summary: return `PASS` only when every blocking finding is fixed with its focused validation and no human decision or blocker remains; otherwise return `REPAIR_REQUIRED`, `HUMAN_REQUIRED`, or `BLOCKED` as supported by the remaining findings.
+20. Run one post-repair review only when the user explicitly requested it. Supply the prior review summary, repair summary, and current change target; use that review's gate status as the terminal state and do not run another repair pass.
+21. Run `summarize-changes` for the local engineer review handoff. When the terminal state is not `PASS`, produce a summary only when enough change-target evidence exists without masking that state.
+22. Stop on a terminal state and produce or update the local run summary for engineer review.
 
 ## Review and Repair Loop
 
-Default max review cycles is `2`.
-
-Each cycle is one consolidated review summary over the current workflow change target. Use `review-repair-cycle.md` for response artifact, repair eligibility, re-review, and cycle evidence rules.
+The default is one consolidated review and one repair pass over the current workflow change target. Use `review-repair-cycle.md` for repair eligibility, terminal-state evidence, and explicit post-repair re-review rules.
 
 Repair is single-pass and single-agent for the first version. Do not fan out repair or repair outside automated-repair eligible findings inside the approved repair boundary.
 
@@ -95,8 +91,8 @@ Repair is single-pass and single-agent for the first version. Do not fan out rep
 
 Use these top-level workflow states:
 
-- `PASS`: review found no required repair, validation gap, or human decision blocking local engineer review.
-- `REPAIR_REQUIRED`: automated-repair eligible findings remain after cycle 2 or repair was not run.
+- `PASS`: review found no required repair, validation gap, or human decision blocking local engineer review, or a repair summary confirms every blocking finding was fixed with focused validation and no blocker remains.
+- `REPAIR_REQUIRED`: automated-repair eligible findings remain after repair or repair was not run.
 - `HUMAN_REQUIRED`: a product, architecture, security, policy, dependency, scope, authorization, or external-workflow decision is required.
 - `BLOCKED`: required inputs, checkout access, safe ownership, validation, or host capabilities are missing.
 
@@ -115,8 +111,8 @@ At handoff, report:
 - Status and terminal state.
 - Feature root, slice selection source, and explicit slice paths processed.
 - Implementation batches and any serialization decisions.
-- Implementation summaries, feature-level refactor summary, cycle-specific review summaries, response artifacts, cycle-specific repair summaries, change summary, and `orchestration/run-summary.md` artifact paths.
+- Implementation summaries, feature-level refactor summary, review summaries, repair summaries, change summary, and `orchestration/run-summary.md` artifact paths.
 - Review execution mode: `delegated-lanes`, `parent-orchestrated-lanes`, `single-agent-fallback`, or `blocked`.
 - Validation evidence and commands actually run.
-- Evidence-backed justifications, deferred findings, unresolved repair queue, and human-required decisions.
+- Repair outcomes, deferred findings, unresolved repair queue, and human-required decisions.
 - Confirmation that changes remain uncommitted and external workflow side effects were not performed.

@@ -1,6 +1,6 @@
 # Normalization Rules
 
-Normalize every supplied source artifact into repair queue entries before editing. A source artifact may be a `run-workflow` response artifact repair queue, native review summary, pasted finding list, external review note, issue comment, checklist, or other structured or semi-structured review output.
+Normalize every supplied source artifact into repair queue entries before editing. A source artifact may be a native review summary, pasted finding list, external review note, issue comment, checklist, or other structured or semi-structured review output.
 
 ## Queue Entry Fields
 
@@ -28,19 +28,6 @@ For native review summaries that already use finding fields:
 - Set `Boundary Fit` by comparing the finding evidence and required change with the explicit repair boundary.
 - Include findings from the repair queue and validation gap sections when present.
 - Include human decision, optional improvement, and info findings only so they can be marked `deferred` or `not-applicable`; do not repair them.
-
-## Run-Workflow Response Artifacts
-
-For `run-workflow` response artifacts:
-
-- Treat the artifact's `Repair Queue` as the authoritative repair input.
-- Include only findings with response value `QUEUED_FOR_REPAIR` as candidate repair entries.
-- Preserve original finding IDs from the response artifact and source review.
-- Preserve or map disposition as `required-fix` or `validation-gap` only when the source review already classified it that way.
-- Set `Repairability` from the source review or repair queue metadata; do not infer `automated-repair` from queue presence alone.
-- Set `Boundary Fit` by comparing the planned repair action and evidence with the explicit repair boundary.
-- Use `Next Action` as the required change only when it is concrete; otherwise set `Required Change` to `Missing`.
-- Keep justified, deferred, and human-required findings in the repair summary as `not-applicable` or `deferred` only when they were supplied for context; do not repair them.
 
 ## Non-Native Artifacts
 

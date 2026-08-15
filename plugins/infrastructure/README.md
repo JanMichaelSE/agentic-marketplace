@@ -1,6 +1,6 @@
 # Infrastructure
 
-Installable plugin for AWS cloud, Kubernetes, Terraform, and Helm rollout infrastructure guidance.
+Installable plugin for AWS cloud, Kubernetes, and Terraform infrastructure guidance.
 
 ## Skills
 
@@ -8,7 +8,6 @@ Installable plugin for AWS cloud, Kubernetes, Terraform, and Helm rollout infras
 |------|---------|-------------|
 | **aws-patterns** | AWS cloud services, architecture, monitoring, and infrastructure-as-code guidance | AWS services, cloud infrastructure, Terraform, or AWS architecture decisions |
 | **kubernetes-patterns** | Kubernetes workload configuration guidance for probes, resources, autoscaling, and disruption budgets | Kubernetes manifests, Helm values, or workload availability and scaling work |
-| **force-pod-restart-on-deploy** | Apply Helm `rollme` pod-template annotations with explicit Git authorization | Ensuring a Deployment rolls pods on each deploy |
 
 ## Installation
 

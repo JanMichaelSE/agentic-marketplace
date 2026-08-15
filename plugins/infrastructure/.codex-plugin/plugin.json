@@ -1,7 +1,7 @@
 {
   "name": "infrastructure",
   "version": "1.1.0",
-  "description": "Infrastructure guidance covering AWS cloud, Kubernetes, Terraform, and Helm rollout patterns.",
+  "description": "Infrastructure guidance covering AWS cloud, Kubernetes, and Terraform patterns.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -13,16 +13,13 @@
     "cloud",
     "terraform",
     "kubernetes",
-    "helm",
-    "rollme",
-    "pod-restart",
     "skills"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Infrastructure",
-    "shortDescription": "AWS, Kubernetes, Terraform, and Helm rollout guidance.",
-    "longDescription": "Infrastructure guidance covering AWS cloud patterns, Kubernetes workload patterns, Helm pod-rollout annotations, and broader Terraform and infrastructure-as-code decisions.",
+    "shortDescription": "AWS, Kubernetes, and Terraform guidance.",
+    "longDescription": "Infrastructure guidance covering AWS cloud patterns, Kubernetes workload patterns, and broader Terraform and infrastructure-as-code decisions.",
     "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [

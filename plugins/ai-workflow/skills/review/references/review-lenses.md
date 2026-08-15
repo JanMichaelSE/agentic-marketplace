@@ -1,41 +1,44 @@
-# Review Lenses
+# Review Axes
 
-Run the lenses that fit the supplied review target. Review quality is defined by enabled lens coverage, not by whether lens work is delegated. Cover every enabled lens through delegated lanes, parent-orchestrated lane outputs, or bounded single-agent fallback.
+Run the enabled axes independently. Review quality is defined by Standards and Spec coverage, not by whether work is delegated. In hosts with sub-agent or parallel-agent support, run each enabled axis in its own delegated lane. When delegation is unavailable and the target is bounded enough for one read-only pass, use `single-agent-fallback`, cover both enabled axes, and record residual confidence limits.
 
-In hosts with sub-agent or parallel-agent support, each enabled lens must run in its own delegated review lane. When a parent coordinator supplies one lane result per enabled lens, assemble and normalize those outputs into the review summary schema. When delegation is unavailable and the target is bounded enough for one read-only pass, use `single-agent-fallback`, cover every enabled lens, and record residual confidence limits.
-
-Skip a lens only when it is not applicable to the supplied target, and record the skip in the review summary. Report `BLOCKED` only when required review inputs or target access are missing, or when the target is too large or risky for the available execution mode.
-
-## Correctness
-
-Check whether the implementation satisfies the execution plan, slices, implementation summaries, refactor summaries, acceptance criteria, public contracts, and expected behavior. Look for incomplete tasks, incorrect control flow, data loss, state transition errors, boundary-condition failures, ordering issues, and error handling that hides or changes failures.
-
-## Security and Guardrails
-
-Check changed trust boundaries, authentication, authorization, secrets, file paths, shell commands, network calls, external I/O, parsing, serialization, logging, dependency changes, configuration, data exposure, and permission changes. Also verify repo guardrails from agent instructions, README files, package metadata, generated-artifact rules, and local workflow constraints.
-
-Critical or high security findings should normally block automated acceptance. If a security issue requires product, policy, credential, or deployment authorization, classify it as a human decision.
-
-## Maintainability
-
-Check whether the change is understandable and locally cohesive. Look for avoidable duplication, confusing names, speculative abstractions, overly broad modules, unclear ownership boundaries, hidden coupling, excessive branching, and complex code that makes future repair risky. Avoid style-only findings unless they create real maintenance risk.
+Skip the Spec axis only when the user confirms that no governing specification exists. Do not skip Standards because the repository lacks a standards document; use the baseline below. Report `BLOCKED` only when required review inputs or target access are missing, or when the target is too large or risky for the available execution mode.
 
 ## Standards
 
-Check whether the change follows nearby repository patterns for file layout, front matter, naming, markdown structure, manifests, validation scripts, tests, fixtures, dependency direction, and artifact ownership. Treat repository-specific instructions as governing context.
+Read applicable repository guidance first: `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, coding-standard files, formatter or linter configuration, and local guidance for the changed area. Cite the source and rule for every documented-standard finding.
 
-## Test Coverage
+The Standards axis always also uses this baseline. These are labelled heuristics, not hard violations; use `possible <smell>` wording. Repository guidance overrides the baseline when it deliberately endorses a pattern. Skip issues tooling already enforces and report only evidence in the reviewed diff.
 
-Map changed production or contract behavior to tests. Identify whether tests directly assert the changed behavior, cover success and failure paths, and would fail for likely regressions. Classify missing or weak tests as validation gaps when they block confidence in the change.
+| Possible smell | Heuristic and direction |
+|---|---|
+| Mysterious Name | A name hides purpose; use an honest, descriptive name. |
+| Duplicated Code | Repeated changed logic may need one shared shape. |
+| Feature Envy | Logic reaches into another object's data more than its own. |
+| Data Clumps | Fields or parameters repeatedly travel together. |
+| Primitive Obsession | A primitive stands in for a meaningful domain concept. |
+| Repeated Switches | The same type dispatch recurs across the change. |
+| Shotgun Surgery | One logical change scatters across unrelated modules. |
+| Divergent Change | One module changes for unrelated reasons. |
+| Speculative Generality | Abstraction exceeds the governing need. |
+| Message Chains | Callers navigate a long object chain. |
+| Middle Man | A layer mostly delegates without adding value. |
+| Refused Bequest | Inheritance is largely ignored or overridden. |
 
-## Test Correctness
+Report documented-standard breaches with the guidance path, rule, and file or hunk evidence. Report baseline concerns as `possible <smell>` judgement calls with the relevant hunk. Distinguish the two, honor repository overrides, and do not duplicate a Spec finding here.
 
-Check whether tests prove what they claim. Look for tests that assert implementation details instead of behavior, over-mock the changed path, use stale fixtures, skip the important branch, accept false positives, weaken existing assertions, or depend on non-deterministic setup.
+## Spec
 
-## Traceability
+Use the governing specification selected by the review process. In workflow mode, the execution plan and approved slices define the primary requirements. In standalone mode, use the explicit or discovered source without guessing.
 
-Map each slice acceptance criterion, execution-plan decision, and stated requirement to delivered changes and validation evidence. Record missing implementation, partially delivered work, and requirements that need human clarification.
+Report:
 
-## Validation Evidence
+- Requirements that are missing or partial.
+- Behavior in the diff that was not requested.
+- Requirements that appear implemented but whose behavior is incorrect.
 
-Review commands that were run, commands that should have been run, and any environmental limits. Treat unrun required validation, failed validation, or validation that does not cover the changed surface as a finding. Prefer concrete commands and outcomes over generic statements.
+Cite the relevant requirement and file or hunk evidence for every finding. Do not report this axis when the user confirmed that no governing specification exists. Do not duplicate a Standards finding here.
+
+## Shared Validation Evidence
+
+For every concrete finding, record the focused validation that would demonstrate a repair. Treat missing, failed, or untargeted validation as a `validation-gap` only when it blocks confidence in a Standards or Spec conclusion; it is not an independent review axis.

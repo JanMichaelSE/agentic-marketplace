@@ -9,7 +9,7 @@ Use one normalized block per finding. The block must be repair-ready: a later au
 - `Severity`: `critical`, `high`, `medium`, `low`, or `info`.
 - `Disposition`: `required-fix`, `validation-gap`, `human-decision`, `optional-improvement`, or `info`.
 - `Repairability`: `automated-repair`, `needs-human`, `manual-only`, or `not-applicable`.
-- `Lens`: primary review lens that found the issue.
+- `Lens`: `Standards` or `Spec`, the independent review axis that found the issue.
 - `Status`: `new` for first review, or a prior-finding status during re-review.
 - `Evidence`: exact file, symbol, diff area, artifact, command output, or source input that proves the issue.
 - `Failure Mode`: concrete way the issue can fail, mislead, regress, or block confidence.
@@ -20,7 +20,7 @@ Use one normalized block per finding. The block must be repair-ready: a later au
 
 ## Disposition Rules
 
-- Use `required-fix` for concrete defects, contract breaks, incomplete implementation, security problems that can be repaired in repo, and standards violations that block the workflow.
+- Use `required-fix` for concrete standards breaches, contract breaks, incomplete implementation, security problems that can be repaired in repo, and specification violations that block the workflow.
 - Use `validation-gap` when the implementation may be correct but evidence is missing, weak, failed, or not targeted to the changed behavior.
 - Use `human-decision` for product, architecture, dependency, security-policy, external-access, rollout, or scope choices.
 - Use `optional-improvement` for low-risk maintainability or clarity issues that should not block the phase.
@@ -41,7 +41,7 @@ Use one normalized block per finding. The block must be repair-ready: a later au
 - Severity: medium
 - Disposition: validation-gap
 - Repairability: automated-repair
-- Lens: Test Coverage
+- Lens: Spec
 - Status: new
 - Evidence: `src/order_validator.py` adds a rejected-input branch; no test covers that branch.
 - Failure Mode: A regression could accept invalid input without any changed test failing.

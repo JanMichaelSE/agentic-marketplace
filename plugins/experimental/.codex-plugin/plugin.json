@@ -1,7 +1,7 @@
 {
   "name": "experimental",
   "version": "4.1.0",
-  "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
+  "description": "Focused preview and incubator skill retained while it gathers feedback before promotion.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -11,7 +11,6 @@
     "experimental",
     "preview",
     "incubator",
-    "code-review",
     "improve-repo-harness",
     "skills"
   ],
@@ -19,7 +18,7 @@
   "interface": {
     "displayName": "Experimental",
     "shortDescription": "Focused preview skills retained before promotion into stable plugins.",
-    "longDescription": "A focused staging plugin for two experimental skills that teams can try before those skills are moved into a stable, long-term plugin group.",
+    "longDescription": "A focused staging plugin for an experimental skill that teams can try before it is moved into a stable, long-term plugin group.",
     "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [

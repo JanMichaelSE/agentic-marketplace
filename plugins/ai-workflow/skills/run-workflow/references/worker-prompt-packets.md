@@ -53,16 +53,16 @@ Instructions:
 
 ## Review Lane Worker Packet
 
-Use one packet per enabled review lens when host support allows delegated or parent-orchestrated lanes.
+Use one packet per enabled review axis when host support allows delegated or parent-orchestrated lanes. The axes are `Standards` and `Spec`.
 
 ```markdown
-Use the review lens named below as a read-only evaluator.
+Use the independent review axis named below as a read-only evaluator.
 
 Repository:
 
 Feature root:
 
-Lens:
+Review Axis:
 
 Review target:
 
@@ -76,6 +76,7 @@ Instructions:
 - Stay read-only.
 - Inspect the supplied source inputs and current target.
 - Produce findings using the normalized review finding schema.
+- Keep Standards and Spec findings independent; do not rerank or blend them.
 - Preserve prior finding IDs during re-review.
 - Record validation evidence and gaps.
 - Do not edit files, commit, push, create branches, create pull requests, post comments, update Jira, or perform external workflow actions.
@@ -112,7 +113,7 @@ Instructions:
 
 ## Repair Invocation Packet
 
-Run repair at most once and only after the response artifact is written.
+Run repair at most once and only after the source review summary is available.
 
 ```markdown
 Use `ai-workflow:repair-findings`.
@@ -125,17 +126,13 @@ Repair boundary:
 
 Source review summary:
 
-Response artifact:
-
-Repair queue:
-
 Cycle-specific repair summary path:
 
 Validation expected:
 
 Instructions:
-- Consume the response artifact and its repair queue as repair inputs.
-- Repair only `QUEUED_FOR_REPAIR`, automated-repair eligible findings inside the boundary.
+- Consume the review summary directly and normalize its repair-ready findings.
+- Repair only automated-repair eligible findings inside the boundary.
 - Keep repair single-pass and single-agent.
 - Do not repair human-required, manual-only, optional, external, destructive, unauthorized, or out-of-boundary findings.
 - Write the repair summary.

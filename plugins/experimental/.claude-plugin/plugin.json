@@ -1,7 +1,7 @@
 {
   "name": "experimental",
   "version": "4.1.0",
-  "description": "Focused preview and incubator skills retained while they gather feedback before promotion.",
+  "description": "Focused preview and incubator skill retained while it gathers feedback before promotion.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/experimental",
   "repository": "https://github.com/JanMichaelSE/agentic-marketplace",

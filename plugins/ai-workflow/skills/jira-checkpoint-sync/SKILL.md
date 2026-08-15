@@ -52,7 +52,6 @@ Use `jira/sync-state.json` as the source of truth for routing:
 | `implementation/NN-*-summary.md` | Matching child Story description | Matching Sub-task description |
 | `refactor/*-summary.md` | Epic comment | Story comment |
 | `review/*-review-summary.md` | Epic comment | Story comment |
-| `response/*-response.md` | Epic comment when human/actionable | Story comment when human/actionable |
 | `repair/*-repair-summary.md` | Epic comment | Story comment |
 | `orchestration/run-summary.md` | Epic comment for terminal/blocker state | Story comment for terminal/blocker state |
 | Draft PR backlink | Epic comment | Story comment |

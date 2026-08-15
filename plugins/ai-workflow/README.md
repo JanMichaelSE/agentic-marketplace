@@ -10,14 +10,14 @@ Stable vendor-neutral workflow skills for turning planning context into implemen
 | [**grill-with-docs**](skills/grill-with-docs/SKILL.md) | Available | Start a deliberate interview that records confirmed domain decisions | Stress-testing planning context against domain language and ADRs before creating an execution plan |
 | [**create-execution-plan**](skills/create-execution-plan/SKILL.md) | Available | Create `.scratch/<feature-slug>/execution-plan.md` from planning context | Moving from idea, PRD, ticket, or conversation into an implementation source of truth |
 | [**create-implementation-slices**](skills/create-implementation-slices/SKILL.md) | Available | Break an execution plan into approved autonomous implementation slices | Preparing bounded implementation work |
-| [**run-workflow**](skills/run-workflow/SKILL.md) | Available | Orchestrate approved slices through implementation, refactor, review, repair, and engineer handoff | Coordinating a complete local workflow after approved slices exist |
+| [**run-workflow**](skills/run-workflow/SKILL.md) | Available | Orchestrate approved slices through implementation, refactor, one review-and-repair pass, and engineer handoff | Coordinating a complete local workflow after approved slices exist |
 | [**jira-plan-import**](skills/jira-plan-import/SKILL.md) | Available | Import an execution plan from a Jira Epic/Story description and slices from child Stories (Epic) or Sub-tasks (Story) into local artifacts | Starting a Jira-backed run when the plan and slices already live in Jira |
 | [**jira-plan-sync**](skills/jira-plan-sync/SKILL.md) | Available | Sync execution plans and approved slices into Jira descriptions and child work items | Publishing Jira-native planning context before implementation starts |
 | [**jira-checkpoint-sync**](skills/jira-checkpoint-sync/SKILL.md) | Available | Sync implementation summaries and workflow checkpoints into Jira descriptions or comments | Recording Jira-native progress after planning has been mapped |
 | [**implement-scope**](skills/implement-scope/SKILL.md) | Available | Implement approved workflow slices or concrete standalone changes | Executing approved slices or direct bounded implementation requests |
 | [**refactor**](skills/refactor/SKILL.md) | Available | Refactor explicitly scoped changes while preserving behavior and writing a concise handoff | Preparing implemented changes for broader review |
-| [**review**](skills/review/SKILL.md) | Available | Review source artifacts and code changes and produce a navigable, repair-ready summary without modifying code | Evaluating implemented or refactored changes before repair, local review, commit, or PR creation |
-| [**repair-findings**](skills/repair-findings/SKILL.md) | Available | Repair eligible in-scope review findings and write a repair summary | Applying bounded fixes from review findings before later review, local review, commit, or PR creation |
+| [**review**](skills/review/SKILL.md) | Available | Review changes through independent Standards and Spec axes and produce a repair-ready summary without modifying code | Evaluating implemented or refactored changes before repair, local review, commit, or PR creation |
+| [**repair-findings**](skills/repair-findings/SKILL.md) | Available | Repair eligible in-scope review findings and record each repair outcome | Applying bounded fixes directly from review findings before local review, commit, or PR creation |
 | [**summarize-changes**](skills/summarize-changes/SKILL.md) | Available | Create a concise change summary handoff using the standard overview format | Summarizing workflow artifacts, real code changes, and validation evidence before PR creation |
 | [**publish-draft-pr**](skills/publish-draft-pr/SKILL.md) | Available | Publish an authorized branch, commit, draft PR, and optional Jira backlink | Creating a draft PR only after terminal workflow handoff and explicit authorization |
 
@@ -28,7 +28,7 @@ Stable vendor-neutral workflow skills for turning planning context into implemen
 3. Use `create-execution-plan` to publish `.scratch/<feature-slug>/execution-plan.md`.
 4. Use `create-implementation-slices` to propose slices and write approved files under `.scratch/<feature-slug>/slices/`.
 5. For Jira-backed workflows where the plan and slices already live in Jira, use `jira-plan-import` to pull the plan from the Epic/Story description and the slices from child Stories (Epic) or Sub-tasks (Story) into local artifacts. Use `jira-plan-sync` instead (or afterward) to push approved local plans/slices back up to Jira for Epic/Story.
-6. Use `run-workflow` to coordinate implementation, refactor, review, repair, and summary after approved slices exist.
+6. Use `run-workflow` to coordinate implementation, refactor, one review-and-repair pass, and summary after approved slices exist. Request a post-repair re-review explicitly when needed.
 7. Use `implement-scope`, `refactor`, `review`, `repair-findings`, and `summarize-changes` directly when running the workflow manually or handling a bounded standalone request.
 8. Use the change summary handoff for engineer local review and commit decisions.
 9. Use `publish-draft-pr` only for explicit draft PR publishing after terminal handoff and authorization.
@@ -62,9 +62,7 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
     <scope-stem>-refactor-summary.md
   review/
     cycle-01-review-summary.md
-    cycle-02-review-summary.md
-  response/
-    cycle-01-response.md
+    cycle-02-review-summary.md # only when explicitly requested
   repair/
     cycle-01-repair-summary.md
   change-summary/
@@ -83,7 +81,7 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
 - New dependencies require explicit authorization in the execution plan, slice, or user instruction.
 - `review` is read-only and normally reviews the assembled feature, story, or approved workflow scope after implementation; per-slice review is reserved for explicit, high-risk, long-running, independently owned, or independently releasable slices.
 - `review` does not perform repair, commits, PR posting, Jira updates, branch operations, or code edits.
-- `repair-findings` edits only within an explicit repair boundary, leaves changes uncommitted, and does not perform PR, Jira, branch, or re-review orchestration.
+- `repair-findings` edits only within an explicit repair boundary, records each repair outcome, leaves changes uncommitted, and does not perform PR, Jira, branch, or re-review orchestration.
 - `summarize-changes` creates or updates a concise change summary handoff artifact; it does not create PRs, update Jira, commit, push, or orchestrate review or repair.
 - `jira-plan-import` owns planning-stage Jira reads and local artifact writes; it reads the plan and slices from descriptions and child work items (never attachments) and does not write to Jira, implement, review, repair, summarize, branch, commit, push, create PRs, transition Jira workflow states, or edit Jira fields.
 - `jira-plan-sync` owns planning-stage Jira writes to descriptions and child work items; it does not implement, review, repair, summarize, branch, commit, push, create PRs, transition Jira workflow states, or edit unrelated Jira fields.
