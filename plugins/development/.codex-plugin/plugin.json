@@ -1,7 +1,7 @@
 {
   "name": "development",
-  "version": "1.3.0",
-  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, prototyping, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
+  "version": "1.4.0",
+  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, agent-writing, communication, Figma-backed UI, local web testing, code simplification, merge-resolution, and handoff workflow guidance.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -18,6 +18,9 @@
     "simplify-code",
     "figma-mcp",
     "webapp-testing",
+    "writing-for-agents",
+    "wait-what",
+    "zoom-out",
     "playwright",
     "design",
     "workflow",
@@ -28,7 +31,7 @@
   "interface": {
     "displayName": "Development",
     "shortDescription": "Stable planning, implementation, testing, and handoff workflows.",
-    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, Figma-backed UI, local web testing, diagnostics, prototyping, research, merge resolution, and handoff.",
+    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, agent-facing writing, clearer communication, code simplification, Figma-backed UI, local web testing, diagnostics, prototyping, research, merge resolution, and handoff.",
     "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
@@ -41,6 +44,7 @@
       "Help me simplify this code while preserving its behavior.",
       "Help me implement this Figma-backed UI using an available MCP integration.",
       "Help me verify this local web application with Playwright.",
+      "Help me write or improve an agent instruction, skill, or supporting reference.",
       "Review this implementation approach against our workflow guidance.",
       "Help me prepare a PR overview for this branch."
     ],

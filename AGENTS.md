@@ -99,6 +99,11 @@ When changing marketplace contents:
 - Prefer relative Markdown links so the docs work on GitHub and in local checkouts.
 - Keep examples generic unless a command is known to be stable for both clients.
 
+## Versioning
+
+When a plugin changes, bump its version by a patch or minor release. A major
+version bump requires explicit user authorization.
+
 ## Validation
 
 Before finishing a documentation or structure change, run:

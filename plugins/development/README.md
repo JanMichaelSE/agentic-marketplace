@@ -1,6 +1,6 @@
 # Development
 
-Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, prototyping, UI design translation, local web testing, code simplification, merge-resolution, and handoff workflow guidance.
+Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, agent-facing writing, clearer communication, prototyping, UI design translation, local web testing, code simplification, merge-resolution, and handoff workflow guidance.
 
 For execution planning and implementation slicing, use AI Workflow's [create-execution-plan](../ai-workflow/skills/create-execution-plan/SKILL.md) and [create-implementation-slices](../ai-workflow/skills/create-implementation-slices/SKILL.md).
 
@@ -33,6 +33,9 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 |------|---------|-------------|
 | **handoff** | Compact the current conversation into a handoff document | Preparing a fresh agent or later session to continue |
 | **create-pr-overview** | Create a concise PR overview document from a diff, PRD, or branch | Preparing branch or PR context for reviewers |
+| **writing-for-agents** | Write predictable skills, agent instructions, and referenced documents | Creating or revising agent-facing guidance |
+| **wait-what** | Request a clearer re-pitch using shared domain language | Explicit user request only |
+| **zoom-out** | Ask for broader context and a higher-level map of unfamiliar code | Exploring a code area before diving in |
 
 ## Dependency Notes
 
@@ -41,6 +44,9 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 - `simplify-code` is self-contained and works with the host project's existing language, formatter, and test commands.
 - `figma-mcp` is optional at runtime and requires user-configured Figma MCP access only for live design data; exported context or screenshots can be used when it is unavailable.
 - `webapp-testing` requires a user-approved local application plus preinstalled Python, Playwright, and browser binaries. Its helper, examples, and Apache-2.0 license are bundled beside the skill.
+- `writing-for-agents` is self-contained as long as `SKILL-MECHANICS.md` remains beside `SKILL.md`.
+- `wait-what` optionally uses a repository's `CONTEXT.md` as the source of its ubiquitous language.
+- `zoom-out` is self-contained.
 - Execution planning and implementation slicing are provided by AI Workflow's `create-execution-plan` and `create-implementation-slices` skills.
 
 ## Installation
