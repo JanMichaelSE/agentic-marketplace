@@ -1,7 +1,7 @@
 {
   "name": "ui-ux",
-  "version": "1.0.0",
-  "description": "UI/UX design intelligence for web and mobile interface design, implementation, and review.",
+  "version": "1.0.2",
+  "description": "UI/UX design intelligence and Figma-backed guidance for web and mobile interface design, implementation, and review.",
   "author": {
     "name": "Agentic Marketplace"
   },
@@ -17,14 +17,15 @@
     "typography",
     "color",
     "animation",
+    "figma-mcp",
     "mobile",
     "skills"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "UI/UX",
-    "shortDescription": "Data-backed interface design intelligence for web and mobile.",
-    "longDescription": "UI/UX guidance for selecting styles, color and typography systems, interaction and accessibility patterns, responsive layouts, motion, charts, and stack-specific implementation practices across web and native applications.",
+    "shortDescription": "Data-backed UI/UX and Figma-backed implementation guidance.",
+    "longDescription": "UI/UX guidance for selecting styles, color and typography systems, interaction and accessibility patterns, responsive layouts, motion, charts, stack-specific implementation practices, and Figma-backed UI work across web and native applications.",
     "developerName": "Agentic Marketplace",
     "category": "Engineering",
     "capabilities": [
@@ -32,6 +33,7 @@
     ],
     "defaultPrompt": [
       "Create a design system for this product and its audience.",
+      "Help me implement this Figma-backed UI using an available MCP integration.",
       "Review this UI for accessibility, responsive design, and interaction issues.",
       "Recommend UI patterns and stack guidance for this screen."
     ],

@@ -125,5 +125,5 @@ For each enabled axis, provide the same target, commit list where applicable, so
 - Treat missing source inputs as `BLOCKED` unless the user supplied an equivalent source. A user-confirmed lack of specification skips only the Spec axis.
 - Do not report `BLOCKED` solely because nested delegation is unavailable for a bounded workflow review; use parent-orchestrated lanes when results are supplied, otherwise use single-agent fallback with explicit residual risk.
 - Escalate conflicting or ambiguous requirements, unauthorized dependencies, security policy uncertainty, external validation requirements, and scope expansion as `human-decision`.
-- Do not require `review-toolkit`, `agentic-sdlc`, `codex exec`, Claude response files, host-specific agent files, GitHub inline comments, or Jira automation.
+- Do not require `review-toolkit`, `codex exec`, Claude response files, host-specific agent files, GitHub inline comments, or Jira automation.
 - Optional companion review skills may be used inside an axis when available, but the output contract remains this skill's review summary.

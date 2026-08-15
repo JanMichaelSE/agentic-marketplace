@@ -1,6 +1,6 @@
-# Development
+# Engineering
 
-Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, agent-facing writing, clearer communication, prototyping, UI design translation, local web testing, code simplification, merge-resolution, and handoff workflow guidance.
+Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, prototyping, local web testing, code simplification, and merge-resolution guidance.
 
 For execution planning and implementation slicing, use AI Workflow's [create-execution-plan](../ai-workflow/skills/create-execution-plan/SKILL.md) and [create-implementation-slices](../ai-workflow/skills/create-implementation-slices/SKILL.md).
 
@@ -11,7 +11,6 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 | Skill | Purpose | When to Use |
 |------|---------|-------------|
 | **inception-planning** | Guide requirements analysis, scoping, and solution design | Starting a feature or refining requirements |
-| **grilling** | Resolve plan and design decisions through a round-by-round frontier interview | Stress-testing a plan or design |
 | **research** | Research a technical question from primary sources and write cited findings | Investigating a technical decision or unknown |
 
 ### Implementation
@@ -24,29 +23,13 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 | **diagnosing-bugs** | Diagnose hard defects with a tight, red-capable feedback loop | Investigating a difficult defect |
 | **resolving-merge-conflicts** | Resolve merge or rebase conflicts through intent discovery and focused validation | Resolving a Git conflict safely |
 | **simplify-code** | Simplify scoped code while preserving behavior | Reducing complexity, duplication, or readability friction |
-| **figma-mcp** | Implement or compare UI against Figma designs through an available MCP integration | Building Figma-backed UI, extracting design tokens, or checking visual parity |
 | **webapp-testing** | Test a local web application with Playwright scripts and inspection assets | Verifying frontend behavior or debugging UI |
-
-### Utilities
-
-| Skill | Purpose | When to Use |
-|------|---------|-------------|
-| **handoff** | Compact the current conversation into a handoff document | Preparing a fresh agent or later session to continue |
-| **create-pr-overview** | Create a concise PR overview document from a diff, PRD, or branch | Preparing branch or PR context for reviewers |
-| **writing-for-agents** | Write predictable skills, agent instructions, and referenced documents | Creating or revising agent-facing guidance |
-| **wait-what** | Request a clearer re-pitch using shared domain language | Explicit user request only |
-| **zoom-out** | Ask for broader context and a higher-level map of unfamiliar code | Exploring a code area before diving in |
 
 ## Dependency Notes
 
-- `create-pr-overview` is self-contained as long as `REFERENCE.md` stays beside `SKILL.md`.
 - `tdd` is self-contained for behavior testing. When the `software-architecture` plugin is installed, it may consult `codebase-design` and `domain-modeling` as the canonical architecture and domain guidance; their absence does not block TDD.
 - `simplify-code` is self-contained and works with the host project's existing language, formatter, and test commands.
-- `figma-mcp` is optional at runtime and requires user-configured Figma MCP access only for live design data; exported context or screenshots can be used when it is unavailable.
 - `webapp-testing` requires a user-approved local application plus preinstalled Python, Playwright, and browser binaries. Its helper, examples, and Apache-2.0 license are bundled beside the skill.
-- `writing-for-agents` is self-contained as long as `SKILL-MECHANICS.md` remains beside `SKILL.md`.
-- `wait-what` optionally uses a repository's `CONTEXT.md` as the source of its ubiquitous language.
-- `zoom-out` is self-contained.
 - Execution planning and implementation slicing are provided by AI Workflow's `create-execution-plan` and `create-implementation-slices` skills.
 
 ## Installation
@@ -56,9 +39,9 @@ Install from the `agentic-marketplace` marketplace:
 ```bash
 # Claude Code
 claude plugin marketplace add JanMichaelSE/agentic-marketplace
-claude plugin install development@agentic-marketplace
+claude plugin install engineering@agentic-marketplace
 
 # Codex
 codex plugin marketplace add https://github.com/JanMichaelSE/agentic-marketplace
-# Then enable `development` from `/plugins` inside Codex
+# Then enable `engineering` from `/plugins` inside Codex
 ```

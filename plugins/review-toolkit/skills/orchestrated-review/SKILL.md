@@ -1,6 +1,6 @@
 ---
 name: orchestrated-review
-description: "MUST invoke for full-suite, combined, bundled, or multi-lens code reviews. Runs deep-review, security-review, pr-review, design-principles-review, requirements-to-tests-traceability, test-coverage-review, and test-correctness-review as applicable, preserving each output in one wrapper. Do not use for a single review lens, review-cycle automation, or GitHub inline comments."
+description: "MUST invoke for full-suite, combined, bundled, or multi-lens code reviews. Runs security-review, design-principles-review, requirements-to-tests-traceability, test-coverage-review, and test-correctness-review as applicable, preserving each output in one wrapper. Do not use for a single review lens, review-cycle automation, or GitHub inline comments."
 ---
 
 # Orchestrated Review
@@ -14,25 +14,25 @@ This skill is a thin orchestration layer. It does not replace the underlying rev
 3. present each review's output in a clean, labeled structure
 4. add only lightweight wrapper metadata and a cross-review index
 
-The orchestrator may identify governing-context references and pass them to `deep-review` and `requirements-to-tests-traceability`, but it must not open, fetch, download, or read spec or context documents itself. This applies to both repo-local files and external documents. External context is optional, not required.
+The orchestrator may identify governing-context references and pass them to `requirements-to-tests-traceability`, but it must not open, fetch, download, or read spec or context documents itself. This applies to both repo-local files and external documents. External context is optional, not required.
 
 ## Prerequisites — Mandatory Verification
 
 **Before running any sub-reviews**, verify that the following skills are available in the current session:
 
-- `deep-review` (from `ai-marketplace/agentic-sdlc`)
-- `pr-review` (from `ai-marketplace/agentic-sdlc`)
 - `security-review` (from this plugin)
+- `design-principles-review` (from this plugin)
+- `requirements-to-tests-traceability` (from this plugin)
+- `test-coverage-review` (from this plugin)
+- `test-correctness-review` (from this plugin)
 
-If any of these skills are not available, **stop immediately** and identify the missing skill. `deep-review` and `pr-review` require `ai-marketplace/agentic-sdlc`; `security-review` ships with this plugin. Do not attempt a partial review until all prerequisites are available.
+If any of these skills are not available, **stop immediately** and identify the missing skill. Do not attempt a partial review until all prerequisites are available.
 
-Only continue past this check if the external skills and the local `security-review` skill are confirmed available in the current session.
+Only continue past this check if the bundled review skills are confirmed available in the current session.
 
 ## Reviews Included
 
-- `deep-review`
 - `security-review`
-- `pr-review`
 - `design-principles-review`
 - `requirements-to-tests-traceability`
 - `test-coverage-review`
@@ -88,7 +88,7 @@ Collect or infer these inputs before reviewing:
 
 ## Where to Look for Governing Docs
 
-If the team is using an Agentic SDLC context repo, `init-feature` creates the feature directory layout that holds the governing documents for review. Look in:
+Look for governing documents in repository documentation, issue-tracker records, technical design documents, or user-provided material. A repository may organize local artifacts like this:
 
 ```text
 <context-repo>/<jira-key>-<short-description>/
@@ -102,7 +102,7 @@ If the team is using an Agentic SDLC context repo, `init-feature` creates the fe
 └── reviews/
 ```
 
-When these files exist, treat their paths as governing-context references to pass into `deep-review` and `requirements-to-tests-traceability`. The orchestrator may discover these files by path or filename, but it must not read their contents.
+When these files exist, treat their paths as governing-context references to pass into `requirements-to-tests-traceability`. The orchestrator may discover these files by path or filename, but it must not read their contents.
 
 ## Governing Context Rules
 
@@ -114,16 +114,15 @@ Establish the best available governing-context reference in this order:
 4. Jira item with description and acceptance criteria
 5. PR description or user-pasted requirements
 
-Use that source for `deep-review` and `requirements-to-tests-traceability`.
+Use that source for `requirements-to-tests-traceability`.
 
-If the governing context is an external link or reference, pass it through to `deep-review` as user-provided context. Do not open it, download it, or summarize it in the orchestrator.
+If the governing context is an external link or reference, pass it through to `requirements-to-tests-traceability` as user-provided context. Do not open it, download it, or summarize it in the orchestrator.
 
 If no governing context exists at all:
 
-- **skip `deep-review`**
 - **skip `requirements-to-tests-traceability`**
 - state clearly that it was skipped because no requirements source was available
-- still run `security-review`, `pr-review`, `design-principles-review`, `test-coverage-review`, and `test-correctness-review`
+- still run `security-review`, `design-principles-review`, `test-coverage-review`, and `test-correctness-review`
 
 ## Execution Mode
 
@@ -131,9 +130,7 @@ The orchestrator always uses the sub-agent approach. It is coordination-only and
 
 Use at most one sub-agent per review skill:
 
-- `deep-review`
 - `security-review`
-- `pr-review`
 - `design-principles-review`
 - `requirements-to-tests-traceability`
 - `test-coverage-review`
@@ -142,9 +139,8 @@ Use at most one sub-agent per review skill:
 Execution requirements:
 
 1. Always delegate each enabled review lens to its own sub-agent.
-   - If governing context exists, launch a `deep-review` sub-agent.
    - If governing context exists, launch a `requirements-to-tests-traceability` sub-agent.
-   - Always launch `security-review`, `pr-review`, `design-principles-review`, `test-coverage-review`, and `test-correctness-review` sub-agents.
+   - Always launch `security-review`, `design-principles-review`, `test-coverage-review`, and `test-correctness-review` sub-agents.
 2. Do not mix orchestration with reviewing.
    - The orchestrator must not conduct review analysis, inspect diffs to form findings, pre-screen issues, or produce review conclusions of its own.
    - Every populated review section must come directly from the corresponding sub-agent output, except for an explicit `SKIPPED` note when a review was not run.
@@ -158,16 +154,17 @@ Execution requirements:
 ### 1. Determine the review target
 
 - Resolve whether the review is against staged changes, local diff, commit range, or PR
+- When the user asks to review local changes without narrowing the target, use `git diff HEAD` so staged and unstaged changes are reviewed together.
 - Capture changed files early
 - Record the code repo path and current branch if relevant
 
 ### 2. Identify the best available governing-context references
 
 - Look for repo-local specs, TDDs, and requirements files by path and filename only
-- In an Agentic SDLC context repo, check for `requirements/`, `design/<feature>-tdd.md`, `specs/00-overview.md`, `specs/phase-N-*.md`, and `specs/tasks.md` under the feature directory created by `init-feature`, but do not read them in the orchestrator
+- When the repository has a feature or scratch directory, check for requirements, design, specifications, and task artifacts by path or filename, but do not read them in the orchestrator
 - If the user provided an external document link or reference, record it as an available governing input without resolving it in the orchestrator
 - If the user provided a Jira key or link, record it as the governing reference when no better governing doc reference exists
-- If only a PR description or pasted acceptance criteria exist, use them as the governing context for `deep-review` and `requirements-to-tests-traceability`
+- If only a PR description or pasted acceptance criteria exist, use them as the governing context for `requirements-to-tests-traceability`
 - Explicitly note which governing references were forwarded and which were missing
 
 ### 3. Run the sub-reviews
@@ -176,19 +173,16 @@ Use one sub-agent per review skill that will run. The orchestrator must stop at 
 
 Then run the reviews in this order:
 
-1. `deep-review` if governing context exists
-2. `requirements-to-tests-traceability` if governing context exists
-3. `security-review`
-4. `pr-review`
-5. `design-principles-review`
-6. `test-coverage-review`
-7. `test-correctness-review`
+1. `requirements-to-tests-traceability` if governing context exists
+2. `security-review`
+3. `design-principles-review`
+4. `test-coverage-review`
+5. `test-correctness-review`
 
 Each sub-review should follow its own skill instructions and produce its own complete output.
 
 When invoking any sub-review skill, instruct the sub-agent to return its complete final review body directly in the agent response and to not save any standalone review artifact file. The orchestrator is the only writer in this workflow.
 
-When invoking `deep-review`, pass along the chosen governing context exactly as a path, pasted text, key, link, or external reference. Do not pre-read any spec or context documents inside this skill.
 When invoking `requirements-to-tests-traceability`, pass along the chosen governing context exactly as a path, pasted text, key, link, or external reference. Do not pre-read any spec or context documents inside this skill.
 
 ### 4. Build and save the wrapper report
@@ -198,7 +192,7 @@ Build the wrapper report with:
 - review target metadata
 - a table of contents at the top
 - a findings summary table immediately after the table of contents
-- governing references forwarded to `deep-review` and `requirements-to-tests-traceability`
+- governing references forwarded to `requirements-to-tests-traceability`
 - one section per review
 - a cross-review index at the end
 
@@ -230,15 +224,13 @@ Use this wrapper structure for the saved markdown file:
 **Review target:** <target>
 **Code repo:** <repo-name> (branch: <branch>)
 **Governing inputs:** <list references that were forwarded, or "none">
-**Reviews run:** deep-review | requirements-to-tests-traceability | security-review | pr-review | design-principles-review | test-coverage-review | test-correctness-review
+**Reviews run:** requirements-to-tests-traceability | security-review | design-principles-review | test-coverage-review | test-correctness-review
 
 ## Table of Contents
 
 - [Findings Summary](#findings-summary)
-- [Deep Review](#deep-review)
 - [Requirements-to-Tests Traceability](#requirements-to-tests-traceability)
 - [Security Review](#security-review)
-- [PR Review](#pr-review)
 - [Design Principles Review](#design-principles-review)
 - [Test Coverage Review](#test-coverage-review)
 - [Test Correctness Review](#test-correctness-review)
@@ -252,10 +244,6 @@ Use this wrapper structure for the saved markdown file:
 |----------|--------|------|--------|--------|
 | Critical/High/Medium/Low/Info | Concise reason this needs attention | Bug/Security/Design/Test Coverage/Test Correctness/Traceability/Other | [Review section or finding heading](#anchor) | PENDING/COMPLETED |
 
-## Deep Review
-
-<paste the exact deep-review output, or a SKIPPED note if no governing context existed>
-
 ## Requirements-to-Tests Traceability
 
 <paste the exact requirements-to-tests-traceability output, or a SKIPPED note if no governing context existed>
@@ -263,10 +251,6 @@ Use this wrapper structure for the saved markdown file:
 ## Security Review
 
 <paste the exact security-review output>
-
-## PR Review
-
-<paste the exact pr-review output>
 
 ## Design Principles Review
 
@@ -284,10 +268,8 @@ Use this wrapper structure for the saved markdown file:
 
 | Review | Ran | High-level result | Notes |
 |--------|-----|-------------------|-------|
-| Deep Review | Yes/No | Findings / No findings / Skipped | Governing doc used or skip reason |
 | Requirements-to-Tests Traceability | Yes/No | Findings / No findings / Skipped | Governing doc used or skip reason |
 | Security Review | Yes | PASS / FAIL / Findings | Main security posture summary |
-| PR Review | Yes | Approved / Needs Changes / Request Changes | High-level verdict only |
 | Design Principles Review | Yes | Findings / No findings | Main structural posture summary |
 | Test Coverage Review | Yes | Findings / No findings | Main change-coverage posture summary |
 | Test Correctness Review | Yes | Findings / No findings | Main test-validity posture summary |
@@ -298,7 +280,7 @@ Use this wrapper structure for the saved markdown file:
 
 ## Gaps / Limitations
 
-- <Missing docs, skipped deep-review, unavailable Jira details, or other scope limits>
+- <Missing docs, skipped requirements traceability, unavailable Jira details, or other scope limits>
 ```
 
 ## Preservation Rules
@@ -312,7 +294,7 @@ Use this wrapper structure for the saved markdown file:
 
 - External governing documents are allowed but optional
 - Examples include Confluence pages, Google Docs, shared design docs, tickets in other systems, or other user-provided references
-- The orchestrator may record and forward these references to `deep-review` and `requirements-to-tests-traceability`
+- The orchestrator may record and forward these references to `requirements-to-tests-traceability`
 - The orchestrator must not open, fetch, download, parse, or summarize spec or context documents itself
 - If no external context is provided, continue by forwarding repo-local doc paths, Jira references, PR text, or pasted requirements when available
 
@@ -327,7 +309,7 @@ Always save the final orchestrated wrapper report to a markdown file in the defa
 - in chat, provide only:
   - whether the report was saved successfully
   - the exact saved file path
-  - any important limitation such as a skipped `deep-review`
+  - any important limitation such as skipped requirements traceability
 
 Example wrapper output paths:
 
@@ -338,9 +320,7 @@ Example wrapper output paths:
 
 ## Related Skills
 
-- **deep-review** — requirements-aware review
 - **security-review** — vulnerability review
-- **pr-review** — focused bug-finding review
 - **requirements-to-tests-traceability** — maps requirements to executable tests
 - **test-coverage-review** — verifies tests cover the changed code
 - **test-correctness-review** — verifies tests actually prove what they claim to test

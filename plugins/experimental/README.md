@@ -29,7 +29,8 @@ The following skills were promoted out of `experimental`; install their destinat
 | Destination plugin | Relocated skills |
 |--------------------|------------------|
 | [ai-workflow](../ai-workflow/README.md) | `code-review` superseded by `review` |
-| [development](../development/README.md) | `grilling`, `research`, `prototype`, `diagnosing-bugs`, `resolving-merge-conflicts`, `writing-for-agents`, `wait-what`, `zoom-out` |
+| [engineering](../engineering/README.md) | `research`, `prototype`, `diagnosing-bugs`, `resolving-merge-conflicts` |
+| [productivity](../productivity/README.md) | `grilling`, `writing-for-agents`, `wait-what`, `zoom-out` |
 | [review-toolkit](../review-toolkit/README.md) | `draft-code-review-comment`, `pr-comment-addressed-check` |
 | [software-architecture](../software-architecture/README.md) | `codebase-design`, `domain-modeling`, `improve-codebase-architecture` |
 

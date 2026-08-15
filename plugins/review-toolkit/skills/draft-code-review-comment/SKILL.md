@@ -1,6 +1,6 @@
 ---
 name: draft-code-review-comment
-description: "MUST invoke when the user asks to draft, write, word, or turn an agreed code-review concern into a concise PR/code review comment in the current chat. Trigger phrases include \"draft a review comment\", \"write a PR comment\", \"turn this into a code review comment\", \"comment for this change\", \"word this review feedback\", and \"make this a concise code review comment\". Also use after a discussion about branch or PR changes when the user says the issue should be raised as review feedback. Do NOT invoke for performing a fresh PR review use pr-review, checking whether an existing comment was addressed use pr-comment-addressed-check, running the experimental code-review skill, or editing the code."
+description: "MUST invoke when the user asks to draft, write, word, or turn an agreed code-review concern into a concise PR/code review comment in the current chat. Trigger phrases include \"draft a review comment\", \"write a PR comment\", \"turn this into a code review comment\", \"comment for this change\", \"word this review feedback\", and \"make this a concise code review comment\". Also use after a discussion about branch or PR changes when the user says the issue should be raised as review feedback. Do NOT invoke for performing a fresh review, checking whether an existing comment was addressed, or editing the code."
 ---
 
 # Draft Code Review Comment
@@ -77,12 +77,10 @@ This logs the retry failure but still lets the caller treat the operation as suc
 
 | Position | Details |
 |----------|---------|
-| **Previous** | Conversation, `pr-review`, `deep-review`, or manual code discussion identifies an issue worth raising |
+| **Previous** | Conversation, a prior review, or manual code discussion identifies an issue worth raising |
 | **This skill** | Converts the agreed concern into one concise, paste-ready review comment in chat |
-| **Next** | User posts the comment manually, or separately runs the experimental `code-review` skill for its distinct, read-only two-axis review |
+| **Next** | User posts the comment manually or requests a separate review |
 
 ## Related Skills
 
-- `pr-review` - perform a fresh review to find issues in a diff or PR
 - `pr-comment-addressed-check` - determine whether an existing review comment has been addressed
-- experimental `code-review` - run its separate, read-only two-axis Standards and Spec review; it does not post comments or replace review-toolkit workflows

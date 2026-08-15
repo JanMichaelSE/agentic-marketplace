@@ -18,18 +18,9 @@ Installable plugin for code, design, security, review-lifecycle, test-coverage, 
 
 ## Prerequisites
 
-This plugin works on its own for diff, PR, and test-review workflows.
-For best results with context-repo, TDD, and formal design-review inputs, also enable:
+This plugin works on its own for diff, PR, requirements, and test-review workflows. Provide any available ticket, specification, technical design, or architecture notes as optional context; the specialist skills use those inputs when they clarify the review target.
 
-- Marketplace: `ai-marketplace`
-- Plugin: `agentic-sdlc`
-
-Optional companion dependency applies most directly to:
-
-- `design-principles-review`
-- `requirements-to-tests-traceability`
-
-`security-review` is fully standalone and includes a [local security checklist](skills/security-review/references/security-checklist.md). `orchestrated-review` requires `ai-marketplace/agentic-sdlc` for its remaining external review lenses. The skill will detect missing dependencies at invocation time and alert you before proceeding.
+`security-review` is fully standalone and includes a [local security checklist](skills/security-review/references/security-checklist.md). `orchestrated-review` bundles the review lenses shipped in this plugin and skips requirements traceability only when no governing requirements source is available.
 
 ## Installation
 

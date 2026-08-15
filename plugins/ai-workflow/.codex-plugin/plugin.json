@@ -1,6 +1,6 @@
 {
   "name": "ai-workflow",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, two-axis review, repair, Jira-native plan and checkpoint sync, draft PR publishing, and change summary handoff.",
   "author": {
     "name": "Jan Montalvo"

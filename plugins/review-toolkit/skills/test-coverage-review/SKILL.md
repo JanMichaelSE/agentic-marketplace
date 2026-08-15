@@ -153,10 +153,8 @@ Otherwise present the review in chat only.
 |-------|------------------|
 | **test-coverage-review** | Do the changed tests meaningfully cover the changed code and likely regression paths |
 | **requirements-to-tests-traceability** | Do the tests map to the stated requirements or acceptance criteria |
-| **deep-review** | Did the implementation match the governing docs overall |
 
 ## Related Skills
 
 - **requirements-to-tests-traceability** — requirement-to-test mapping
-- **deep-review** — broader spec-aware review
 - **orchestrated-review** — bundles this review with other review lenses

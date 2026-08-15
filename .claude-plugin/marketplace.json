@@ -8,11 +8,12 @@
   "plugins": [
     { "name": "ai-workflow", "source": "./plugins/ai-workflow" },
     { "name": "atlassian", "source": "./plugins/atlassian" },
-    { "name": "development", "source": "./plugins/development" },
+    { "name": "engineering", "source": "./plugins/engineering" },
     { "name": "experimental", "source": "./plugins/experimental" },
     { "name": "github", "source": "./plugins/github" },
     { "name": "infrastructure", "source": "./plugins/infrastructure" },
     { "name": "keychain", "source": "./plugins/keychain" },
+    { "name": "productivity", "source": "./plugins/productivity" },
     { "name": "review-toolkit", "source": "./plugins/review-toolkit" },
     { "name": "software-architecture", "source": "./plugins/software-architecture" },
     { "name": "ui-ux", "source": "./plugins/ui-ux" }

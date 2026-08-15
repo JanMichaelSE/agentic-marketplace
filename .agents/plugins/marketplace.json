@@ -21,10 +21,18 @@
       "category": "Developer Tools"
     },
     {
-      "name": "development",
+      "name": "engineering",
       "source": {
         "source": "local",
-        "path": "./plugins/development"
+        "path": "./plugins/engineering"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "productivity",
+      "source": {
+        "source": "local",
+        "path": "./plugins/productivity"
       },
       "category": "Developer Tools"
     },

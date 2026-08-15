@@ -38,14 +38,15 @@ Current plugin groups:
 
 - `plugins/ai-workflow/` contains plan grilling, domain-aware decision capture, execution planning, implementation slicing, local orchestration, bounded implementation, refactoring, review, repair, Jira-native sync, publishing, and change-summary handoff workflow skills.
 - `plugins/atlassian/` contains vendor-neutral Jira lifecycle and read-oriented Confluence research skills.
-- `plugins/development/` contains planning, design, implementation, Figma-backed UI, local web testing, simplification, and handoff workflow skills.
+- `plugins/engineering/` contains planning, implementation, discovery, diagnostics, local web testing, simplification, and merge-resolution guidance.
 - `plugins/experimental/` contains preview skills that are still gathering feedback.
 - `plugins/github/` contains GitHub CLI repository-operation and GitHub Actions workflow guidance.
 - `plugins/infrastructure/` contains AWS, Kubernetes, Terraform, and cloud guidance skills.
 - `plugins/keychain/` contains cross-platform developer-laptop credential-storage guidance.
+- `plugins/productivity/` contains general-purpose decision grilling, handoff, agent-writing, clarity, and codebase-orientation skills.
 - `plugins/review-toolkit/` contains code, design, security, test-coverage, test-correctness, and orchestrated review skills.
 - `plugins/software-architecture/` contains architecture vocabulary, domain modeling, and architecture-improvement guidance.
-- `plugins/ui-ux/` contains data-backed UI/UX design intelligence for web and mobile interface design, implementation, and review.
+- `plugins/ui-ux/` contains data-backed UI/UX design intelligence and Figma-backed interface implementation guidance.
 
 ## How Plugins Work
 

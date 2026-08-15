@@ -1,6 +1,6 @@
 ---
 name: design-principles-review
-description: MUST invoke for SOLID, design-principles, abstraction, modularity, coupling/cohesion, maintainability, or design-pattern code reviews. Produces findings-first maintainability/testability risks. Use deep-review for spec conformance, security-review for security-only, pr-review for bug-only, and orchestrated-review for bundled reviews.
+description: MUST invoke for SOLID, design-principles, abstraction, modularity, coupling/cohesion, maintainability, or design-pattern code reviews. Produces findings-first maintainability/testability risks. Use requirements-to-tests-traceability for requirements verification, security-review for security-only, and orchestrated-review for bundled reviews.
 ---
 
 # Design Principles Review
@@ -13,17 +13,11 @@ This skill is for the question: "Is this code well-structured and maintainable?"
 
 This skill can run standalone from a diff, PR, Jira item, TDD, or requirements document.
 
-**At the start of this skill:** Check whether `ai-marketplace/agentic-sdlc` skills are available in the current session context. If those skills are not found, notify the user once with this recommendation before proceeding:
-
-> **Recommendation:** For best results, also enable the `agentic-sdlc` plugin from `ai-marketplace`. That companion plugin improves context quality for context-repo, TDD, and formal design inputs. This skill will continue using available inputs without it.
-
-If `ai-marketplace/agentic-sdlc` is already available in the current session, proceed silently without mentioning this notice.
-
 ## When to Use
 
 - When the user explicitly asks for SOLID or design-principles review
 - When the code appears functionally correct but the structure may be brittle
-- When you want a separate design-quality lens in addition to deep-review, security-review, or pr-review
+- When you want a separate design-quality lens in addition to security-review or requirements-to-tests-traceability
 - When governing docs may or may not exist; this skill can work with diff-only context
 
 ## Inputs
@@ -38,7 +32,7 @@ If optional context is missing, continue with the code and diff alone. Make that
 
 ## Where to Look for Specs
 
-If the team is using an Agentic SDLC context repo, `init-feature` creates the feature directory layout that governs where design and spec artifacts live. Look for context in:
+Look for design and specification context in repository documentation, issue-tracker records, technical design documents, or user-provided material. A repository may organize local artifacts like this:
 
 ```text
 <context-repo>/<jira-key>-<short-description>/
@@ -52,7 +46,7 @@ If the team is using an Agentic SDLC context repo, `init-feature` creates the fe
 └── reviews/
 ```
 
-When those files exist, prefer reviewing against them instead of guessing the intended boundaries from code alone.
+When these files exist, prefer reviewing against them instead of guessing the intended boundaries from code alone.
 
 ## Review Lens
 
@@ -82,7 +76,7 @@ Evaluate the changed code and directly affected surrounding code against these p
 
 - If a TDD or Jira item exists, use it to understand the intended module boundaries and responsibilities.
 - If a phase spec exists, use it to understand whether responsibilities were intentionally split or deferred.
-- In an Agentic SDLC context repo, check `design/<feature>-tdd.md`, `specs/00-overview.md`, `specs/phase-N-*.md`, and `specs/tasks.md` under the feature directory created by `init-feature`.
+- When the repository has a feature or scratch directory, check its TDD, specification, and task artifacts.
 - If no context exists, review against the codebase's established patterns and the changed code's own contracts.
 
 ### 3. Review for concrete design failures
@@ -111,7 +105,7 @@ When tests are part of the change:
 - Check whether tests can verify behavior through stable seams instead of intimate knowledge of implementation
 - Note brittle or over-coupled tests only when that reflects a real design problem
 
-Do not use this skill to judge requirements coverage. That belongs to deep-review.
+Do not use this skill to judge requirements coverage. That belongs to `requirements-to-tests-traceability`.
 
 ## Output Format
 
@@ -183,15 +177,12 @@ Otherwise present the review in chat only.
 
 | Skill | Primary question |
 |-------|------------------|
-| **deep-review** | Did we implement the required behavior and match the governing docs |
 | **security-review** | Did we introduce security vulnerabilities |
-| **pr-review** | Are there concrete bugs, logic errors, or contract violations in the changed code |
+| **requirements-to-tests-traceability** | Do executable tests verify the governing requirements |
 | **design-principles-review** | Is the changed code structured in a maintainable, extensible, and testable way |
 
 ## Related Skills
 
-- **deep-review** — requirements and test coverage against governing docs
 - **security-review** — security-focused review
-- **pr-review** — focused bug-finding review
+- **requirements-to-tests-traceability** — requirements verification through executable tests
 - **orchestrated-review** — bundles this review with the other review skills
-

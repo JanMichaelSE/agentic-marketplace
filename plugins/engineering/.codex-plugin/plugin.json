@@ -1,0 +1,45 @@
+{
+  "name": "engineering",
+  "version": "1.5.1",
+  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, local web testing, code simplification, and merge-resolution guidance.",
+  "author": {
+    "name": "Jan Montalvo"
+  },
+  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/engineering",
+  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
+  "keywords": [
+    "planning",
+    "implementation",
+    "research",
+    "prototype",
+    "diagnosing-bugs",
+    "merge-conflicts",
+    "simplify-code",
+    "webapp-testing",
+    "playwright",
+    "design",
+    "workflow",
+    "engineering",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering",
+    "shortDescription": "Stable planning, implementation, testing, and merge-resolution guidance.",
+    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, local web testing, diagnostics, prototyping, research, and merge resolution.",
+    "developerName": "Jan Montalvo",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Help me refine this feature's requirements and solution design.",
+      "Help me turn approved planning context into an execution plan and implementation slices with AI Workflow.",
+      "Help me work through this change test-first.",
+      "Help me simplify this code while preserving its behavior.",
+      "Help me verify this local web application with Playwright.",
+      "Review this implementation approach against our workflow guidance."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

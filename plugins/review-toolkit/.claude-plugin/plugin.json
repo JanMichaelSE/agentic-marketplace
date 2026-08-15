@@ -1,6 +1,6 @@
 {
   "name": "review-toolkit",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Code, design, security, test-coverage, test-correctness, and multi-lens review skills.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/review-toolkit",

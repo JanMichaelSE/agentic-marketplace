@@ -1,6 +1,6 @@
 ---
 name: requirements-to-tests-traceability
-description: "MUST invoke to review whether requirements, acceptance criteria, Jira expectations, or specs are verified by tests. Maps requirements to test cases, finds missing or weak verification, and reports a requirement-to-test matrix. Use test-coverage-review for diff coverage, deep-review for general spec conformance, and orchestrated-review for bundled reviews."
+description: "MUST invoke to review whether requirements, acceptance criteria, Jira expectations, or specs are verified by tests. Maps requirements to test cases, finds missing or weak verification, and reports a requirement-to-test matrix. Use test-coverage-review for diff coverage and orchestrated-review for bundled reviews."
 ---
 
 # Requirements-to-Tests Traceability
@@ -13,18 +13,12 @@ This skill answers a different question from generic test coverage. It is not "d
 
 This skill can run standalone from a diff, PR, Jira item, TDD, or requirements document.
 
-**At the start of this skill:** Check whether `ai-marketplace/agentic-sdlc` skills are available in the current session context. If those skills are not found, notify the user once with this recommendation before proceeding:
-
-> **Recommendation:** For best results, also enable the `agentic-sdlc` plugin from `ai-marketplace`. That companion plugin improves context quality for context-repo, phase spec, and formal requirements inputs. This skill will continue using available inputs without it.
-
-If `ai-marketplace/agentic-sdlc` is already available in the current session, proceed silently without mentioning this notice.
-
 ## When to Use
 
 - When the user wants to know whether the tests prove the feature meets the spec
 - When requirements come from a phase spec, Jira ticket, acceptance criteria, PR description, or pasted requirements
 - When you need a traceability matrix from requirements to tests
-- When you want a separate validation lens alongside deep-review and test-coverage-review
+- When you want a separate validation lens alongside test-coverage-review
 
 ## Inputs
 
@@ -39,7 +33,7 @@ This skill requires some form of governing requirements source. If none exists, 
 
 ## Where to Look for Requirements Sources
 
-If the team uses an Agentic SDLC context repo created by `init-feature`, governing requirement artifacts typically live here:
+Governing requirement artifacts may be stored in a feature or scratch directory such as:
 
 ```text
 <context-repo>/<jira-key>-<short-description>/
@@ -173,13 +167,10 @@ Otherwise present the review in chat only.
 
 | Skill | Primary question |
 |-------|------------------|
-| **deep-review** | Did the implementation match the governing docs overall |
 | **requirements-to-tests-traceability** | Can each stated requirement be traced to meaningful executable tests |
 | **test-coverage-review** | Do the changed tests cover the changed code paths and regression risk |
 
 ## Related Skills
 
-- **deep-review** — broader spec conformance
 - **test-coverage-review** — change-based test coverage analysis
 - **orchestrated-review** — bundles this review with other review lenses
-

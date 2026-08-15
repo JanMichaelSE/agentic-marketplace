@@ -45,7 +45,7 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
 
 ## Cross-plugin dependencies
 
-- `grill-me` delegates the interview to Development's [grilling](../development/skills/grilling/SKILL.md) skill.
+- `grill-me` delegates the interview to Productivity's [grilling](../productivity/skills/grilling/SKILL.md) skill.
 - `grill-with-docs` delegates the interview to `grilling` and records confirmed terminology and ADRs through Software Architecture's [domain-modeling](../software-architecture/skills/domain-modeling/SKILL.md) skill. Install those plugins alongside AI Workflow when using either entry point.
 
 ## Artifact Layout

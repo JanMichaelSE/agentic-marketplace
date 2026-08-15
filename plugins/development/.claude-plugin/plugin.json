@@ -1,9 +1,0 @@
-{
-  "name": "development",
-  "version": "1.4.0",
-  "description": "Cross-stack planning, implementation, diagnostics, agent-writing, communication, Figma UI, web testing, simplification, and handoff guidance.",
-  "author": { "name": "Jan Montalvo" },
-  "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/development",
-  "repository": "https://github.com/JanMichaelSE/agentic-marketplace",
-  "skills": "./skills/"
-}
