@@ -1,4 +1,4 @@
-# CONTEXT.md Format
+# Domain Glossary Format
 
 ## Structure
 
@@ -48,18 +48,24 @@ _Avoid_: Client, buyer, account
 
 ## Single vs multi-context repos
 
-**Single context (most repos):** One `CONTEXT.md` at the repo root.
+Use the repository's established convention: `GLOSSARY.md` /
+`GLOSSARY-MAP.md` or `CONTEXT.md` / `CONTEXT-MAP.md`. This format applies to
+both; preserve existing filenames and links. For convention selection and
+conflicts, follow the `domain-modeling` skill.
 
-**Multiple contexts:** A `CONTEXT-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other:
+**Single context:** one glossary at the repository root.
+
+**Multiple contexts:** a root map lists the contexts, their glossary paths,
+and their relationships. For example, a `GLOSSARY-MAP.md` can contain:
 
 ```md
-# Context Map
+# Glossary Map
 
 ## Contexts
 
-- Ordering — `src/ordering/CONTEXT.md` — receives and tracks customer orders
-- Billing — `src/billing/CONTEXT.md` — generates invoices and processes payments
-- Fulfillment — `src/fulfillment/CONTEXT.md` — manages warehouse picking and shipping
+- Ordering — `src/ordering/GLOSSARY.md` — receives and tracks customer orders
+- Billing — `src/billing/GLOSSARY.md` — generates invoices and processes payments
+- Fulfillment — `src/fulfillment/GLOSSARY.md` — manages warehouse picking and shipping
 
 ## Relationships
 
@@ -68,10 +74,7 @@ _Avoid_: Client, buyer, account
 - **Ordering <-> Billing**: Shared types for `CustomerId` and `Money`
 ```
 
-The skill infers which structure applies:
-
-- If `CONTEXT-MAP.md` exists, read it to find contexts
-- If only a root `CONTEXT.md` exists, single context
-- If neither exists, create a root `CONTEXT.md` lazily when the first term is resolved
-
-When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.
+Read the established map before selecting a glossary. Infer which context the
+current topic concerns; if unclear, ask. When no convention exists, create a
+root `GLOSSARY.md` lazily when the first term is resolved and documentation
+changes are authorized.

@@ -24,8 +24,8 @@ domain model or architecture decisions. Route material domain-model work to
 Read the existing agent front door, repository README and documentation index,
 nearby contribution guidance, build or validation entry points, and enough
 source and test structure to understand current navigation. Inspect existing
-`CONTEXT.md`, `CONTEXT-MAP.md`, ADR locations, and requirements or design
-documents only as evidence of established conventions.
+`GLOSSARY.md` / `GLOSSARY-MAP.md` or `CONTEXT.md` / `CONTEXT-MAP.md`, ADR
+locations, and requirements or design documents only as evidence of established conventions.
 
 Record the paths and concise observations that support each possible
 recommendation. Consult [HARNESS-RUBRIC.md](HARNESS-RUBRIC.md) for the evidence
@@ -63,8 +63,9 @@ documentation.
 
 #### Domain conventions
 
-Assess whether established `CONTEXT.md`, `CONTEXT-MAP.md`, and ADR conventions
-are discoverable. Use [DOMAIN-CONVENTIONS.md](DOMAIN-CONVENTIONS.md) to inspect
+Assess whether established glossary/map conventions (`GLOSSARY.md` /
+`GLOSSARY-MAP.md` or `CONTEXT.md` / `CONTEXT-MAP.md`) and ADR conventions are
+discoverable. Use [DOMAIN-CONVENTIONS.md](DOMAIN-CONVENTIONS.md) to inspect
 and route those conventions. Offer discovery or routing only; route requests
 to define terms or record decisions to `domain-modeling`.
 

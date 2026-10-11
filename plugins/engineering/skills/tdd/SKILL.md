@@ -55,6 +55,7 @@ Before writing a test, agree on the seam and the ordered observable behaviors to
 Record or confirm:
 
 - [ ] The caller-facing seam that the test will cross
+- [ ] A one-line note for each proposed seam explaining what it catches and what it misses
 - [ ] The behavior's observable outcome and constraints
 - [ ] A prioritized list of behaviors, starting with the smallest valuable path
 - [ ] Which dependency substitutes, if any, are justified at external seams

@@ -9,7 +9,7 @@ Surface demonstrated architectural friction and propose narrowly scoped improvem
 
 ## Shared Guidance
 
-[codebase-design](../codebase-design/SKILL.md) is the canonical source for architecture vocabulary, dependency categories, deepening, and alternative design. [domain-modeling](../domain-modeling/SKILL.md) is the canonical source for domain language, `CONTEXT.md`, and ADR practices. Use their terms and formats rather than copying or redefining them here.
+[codebase-design](../codebase-design/SKILL.md) is the canonical source for architecture vocabulary, dependency categories, deepening, and alternative design. [domain-modeling](../domain-modeling/SKILL.md) is the canonical source for domain language, glossary selection (`GLOSSARY.md` or `CONTEXT.md`), and ADR practices. Use their terms and formats rather than copying or redefining them here.
 
 Both are companion guidance, not a precondition. If either is unavailable, continue with the project's existing language and decisions; state the missing context and do not invent a replacement glossary or document format.
 

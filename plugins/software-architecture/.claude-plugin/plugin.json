@@ -1,6 +1,6 @@
 {
   "name": "software-architecture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Architecture and domain-modeling skills for deep modules and safer active codebase changes.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/software-architecture",

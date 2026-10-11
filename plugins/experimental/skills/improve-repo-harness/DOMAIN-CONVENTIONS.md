@@ -7,8 +7,8 @@ define domain language or architecture decisions.
 
 Look for, in order:
 
-1. Root `CONTEXT.md` for a single shared context.
-2. Root `CONTEXT-MAP.md` for routes to scoped context documents.
+1. Root `GLOSSARY-MAP.md` or `CONTEXT-MAP.md` for routes to scoped glossaries.
+2. Root `GLOSSARY.md` or `CONTEXT.md` for a single shared context.
 3. Root `docs/adr/` and ADR directories scoped beside the relevant context.
 4. Existing requirements and design documents that name the governing context
    or decisions for the area being explored.

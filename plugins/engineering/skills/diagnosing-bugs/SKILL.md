@@ -31,6 +31,11 @@ iteration, and assert the user's exact symptom rather than merely checking that
 the process did not crash. For intermittent failures, raise the reproduction
 rate with repeated, controlled runs and document the observed rate.
 
+Before moving to Phase 2, name one command that exercises the actual failure
+path and asserts the user's exact symptom. Run it at least once and capture
+the invocation and observed output, redacting sensitive values. A proposed
+command or a check that merely runs without crashing is not a verified loop.
+
 Do not execute a command that starts services, launches a browser, changes
 data, creates a branch, installs dependencies, or contacts an external system
 without the authorization required by the repository and user request. The
@@ -69,6 +74,10 @@ Write the regression test before the fix only when it uses a seam that covers
 the real failure path. Confirm it fails, apply the scoped fix, confirm it
 passes, then rerun the original, unminimized loop. If no suitable seam exists,
 document that architecture finding rather than creating a misleading test.
+
+If you force a red result by mutating code or a fixture, compare it against a
+pristine copy to prove the intended mutation landed before trusting the result.
+Restore the temporary mutation before validating the actual fix.
 
 ## Completion
 

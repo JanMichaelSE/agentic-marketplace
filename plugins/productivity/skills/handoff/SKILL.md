@@ -20,6 +20,7 @@ If the available context cannot be safely summarized without exposing sensitive 
 2. Use the host operating system's standard secure temporary-file facility. Do not require a platform-specific shell command. Create the temporary file before writing and retain its returned path.
 3. When the temporary-file facility pre-creates the file, read it before editing to confirm the target is the expected temporary file. Then write only the redacted handoff.
 4. Keep the handoff focused on the current state, safe next actions, unresolved decisions or blockers, and artifact references.
+5. Include a **Suggested skills** section inside the document. Name available skills that fit the next action and briefly explain when to use them; if none fit, say so. The next agent must receive these suggestions even when it sees only the document.
 
 If the user passed arguments, treat them as the next session's focus and tailor the handoff accordingly.
 
