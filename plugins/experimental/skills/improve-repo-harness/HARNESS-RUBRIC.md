@@ -9,7 +9,7 @@ navigation or discoverability gap with a small durable documentation change.
 | Front door | Existing agent guidance, contribution guidance, and the first documents a new reader reaches | A precise pointer to durable rules or the authoritative documentation entry point |
 | Navigation and repository map | Existing indexes plus the actual locations of source, tests, documents, and relevant entry points | A short map or cross-link that helps a reader reach those locations without duplicating their contents |
 | Validation and bootstrap | Existing build, test, task-runner, or bootstrap documentation and their named prerequisites | A pointer that makes already-supported commands and prerequisites easier to find |
-| Domain conventions | Existing `CONTEXT.md`, `CONTEXT-MAP.md`, ADR locations, and design or requirements documents | A discovery or routing pointer to the established convention |
+| Domain conventions | Existing `GLOSSARY.md` / `GLOSSARY-MAP.md` or `CONTEXT.md` / `CONTEXT-MAP.md`, ADR locations, and design or requirements documents | A discovery or routing pointer to the established convention |
 | Optional small improvements | A specific inconsistency or missing connection in the above evidence | One narrowly scoped repair that preserves existing ownership |
 
 For every section, retain the observed paths, distinguish fact from inference,

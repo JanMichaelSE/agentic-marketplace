@@ -1,6 +1,6 @@
 ---
 name: domain-modeling
-description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.
+description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing GLOSSARY.md or CONTEXT.md, or recording or editing an ADR.
 ---
 
 # Domain Modeling
@@ -8,13 +8,19 @@ description: Build and sharpen a project's domain model. Use when discussing cod
 Actively build and sharpen a project's domain model while designing. This is
 the discipline of challenging terms, probing edge-case scenarios, and
 recording language or durable decisions when they crystallize—not merely
-reading `CONTEXT.md` for vocabulary.
+reading the project's glossary for vocabulary.
 
 ## Locate the Domain Documents
 
-- For a single context, use root `CONTEXT.md` and `docs/adr/`.
-- If root `CONTEXT-MAP.md` exists, use it to identify the relevant context and
-  its scoped `CONTEXT.md` and ADR directory.
+- Follow the repository's documented domain convention. Support both
+  `GLOSSARY.md` / `GLOSSARY-MAP.md` and `CONTEXT.md` / `CONTEXT-MAP.md`.
+- Read an existing root map to identify the relevant scoped glossary and ADR
+  directory before assuming the root glossary applies. For a single context,
+  use the established root glossary and `docs/adr/`.
+- If both conventions exist, follow repository guidance or map ownership;
+  ask which is authoritative if they conflict. Do not merge or rename them
+  automatically.
+- When no convention exists, default to `GLOSSARY.md` and `docs/adr/`.
 - Create domain documents lazily: only after a term is resolved or a meaningful
   decision needs recording. Preserve unrelated user changes.
 
@@ -42,8 +48,8 @@ stated model and observed behavior.
 
 ### Maintain the model deliberately
 
-When the user resolves a term, update `CONTEXT.md` at that point if they have
-authorized repository documentation changes; otherwise present the proposed
+When the user resolves a term, update the selected glossary at that point if
+they have authorized repository documentation changes; otherwise present the proposed
 entry for confirmation. Keep the glossary free of implementation details,
 specification prose, scratch notes, and implementation decisions.
 

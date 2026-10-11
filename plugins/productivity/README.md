@@ -15,7 +15,7 @@ Installable plugin for stable, general-purpose agent collaboration: resolving de
 ## Dependency Notes
 
 - `writing-for-agents` is self-contained as long as `SKILL-MECHANICS.md` remains beside `SKILL.md`.
-- `wait-what` optionally uses a repository's `CONTEXT.md` as the source of its ubiquitous language.
+- `wait-what` optionally uses a repository's established `GLOSSARY.md` or `CONTEXT.md`, following its root map for scoped contexts, as the source of its ubiquitous language.
 - The remaining skills are self-contained.
 
 ## Installation

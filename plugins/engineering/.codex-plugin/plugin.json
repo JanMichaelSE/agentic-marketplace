@@ -1,7 +1,7 @@
 {
   "name": "engineering",
-  "version": "1.5.1",
-  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, local web testing, code simplification, and merge-resolution guidance.",
+  "version": "1.6.0",
+  "description": "Stable cross-stack planning, implementation, discovery, diagnostics, local web testing, code simplification, merge-resolution guidance, and session retrospectives.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -13,6 +13,7 @@
     "research",
     "prototype",
     "diagnosing-bugs",
+    "retro",
     "merge-conflicts",
     "simplify-code",
     "webapp-testing",
@@ -25,8 +26,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Engineering",
-    "shortDescription": "Stable planning, implementation, testing, and merge-resolution guidance.",
-    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, local web testing, diagnostics, prototyping, research, and merge resolution.",
+    "shortDescription": "Planning, testing, diagnostics, and session retrospectives.",
+    "longDescription": "Cross-stack engineering guidance for feature discovery, planning, implementation discipline, code simplification, local web testing, diagnostics, prototyping, research, merge resolution, and session retrospectives.",
     "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [

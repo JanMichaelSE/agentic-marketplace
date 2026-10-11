@@ -1,6 +1,6 @@
 {
   "name": "software-architecture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stable architecture and domain-modeling skills for designing deep modules, maintaining domain language, and safely improving active codebase changes.",
   "author": {
     "name": "Jan Montalvo"

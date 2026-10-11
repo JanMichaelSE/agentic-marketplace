@@ -1,6 +1,6 @@
 {
   "name": "productivity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Agent collaboration, decision grilling, handoff, agent-writing, clarity, and codebase-orientation guidance.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/productivity",

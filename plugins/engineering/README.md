@@ -1,6 +1,6 @@
 # Engineering
 
-Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, prototyping, local web testing, code simplification, and merge-resolution guidance.
+Installable plugin for stable cross-stack planning, implementation, discovery, diagnostics, prototyping, local web testing, code simplification, merge resolution, and session retrospectives.
 
 For execution planning and implementation slicing, use AI Workflow's [create-execution-plan](../ai-workflow/skills/create-execution-plan/SKILL.md) and [create-implementation-slices](../ai-workflow/skills/create-implementation-slices/SKILL.md).
 
@@ -25,11 +25,18 @@ For execution planning and implementation slicing, use AI Workflow's [create-exe
 | **simplify-code** | Simplify scoped code while preserving behavior | Reducing complexity, duplication, or readability friction |
 | **webapp-testing** | Test a local web application with Playwright scripts and inspection assets | Verifying frontend behavior or debugging UI |
 
+### Session Retrospectives
+
+| Skill | Purpose | When to Use |
+|------|---------|-------------|
+| [**retro**](skills/retro/SKILL.md) | Recommend evidence-based improvements to the coding agent environment | Reviewing a coding session; explicit user request only |
+
 ## Dependency Notes
 
 - `tdd` is self-contained for behavior testing. When the `software-architecture` plugin is installed, it may consult `codebase-design` and `domain-modeling` as the canonical architecture and domain guidance; their absence does not block TDD.
 - `simplify-code` is self-contained and works with the host project's existing language, formatter, and test commands.
 - `webapp-testing` requires a user-approved local application plus preinstalled Python, Playwright, and browser binaries. Its helper, examples, and Apache-2.0 license are bundled beside the skill.
+- `retro` optionally uses Productivity's `writing-for-agents` guidance. It reviews session evidence and proposes improvements; use Experimental's `improve-repo-harness` for a broader repository-guidance assessment.
 - Execution planning and implementation slicing are provided by AI Workflow's `create-execution-plan` and `create-implementation-slices` skills.
 
 ## Installation

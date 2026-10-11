@@ -15,10 +15,17 @@ guessing at answers you have not heard yet. Ask the whole frontier in one
 round: number each question and give your recommended answer. Then wait for the
 user's answers before the next round.
 
-Each question should be formatted like so:
+Word each question so "yes" accepts your recommended answer. Format each round
+like so, separating questions with a horizontal rule:
 
 ```
 ❓ **Q1** - **<question title>**: <question body, which can include multiple paragraphs and choices>
+
+➡️ <your recommended answer>
+
+---
+
+❓ **Q2** - **<question title>**: <question body, which can include multiple paragraphs and choices>
 
 ➡️ <your recommended answer>
 ```

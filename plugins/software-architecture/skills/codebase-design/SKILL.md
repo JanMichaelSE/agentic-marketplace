@@ -58,6 +58,7 @@ When designing or restructuring code:
 5. If the interface is still uncertain, use the bounded alternative-design
    process in [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md).
 
-Use the project's `CONTEXT.md` terms for domain concepts. Do not create,
+Use the project's established glossary (`GLOSSARY.md` or `CONTEXT.md`) for
+domain concepts, following its root map when contexts are scoped. Do not create,
 commit, push, install dependencies, or make external mutations unless the user
 has separately authorized them.
