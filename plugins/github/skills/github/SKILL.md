@@ -46,13 +46,24 @@ gh pr view <number> --repo <owner>/<repo> --json title,body,state,reviews
 
 ### Create with a body file
 
-For Markdown, tables, or backticks, use `--body-file` rather than an inline shell argument.
+For Markdown, tables, or backticks, use `--body-file` rather than an inline shell argument. Write the body with AI Workflow's [pr](../../../ai-workflow/skills/pr/SKILL.md) skill when that plugin is installed; otherwise follow the repository's PR template.
 
 ```bash
 cat > /tmp/pr-body.md << 'EOF'
 ## Summary
 
-- Describe the change.
+<diagram, diff-sketch, or tree>
+
+## Evidence
+
+- **Before:** <failing test or output>
+  **After:** <passing test or output>
+
+## Merge Danger
+
+**Door:** two-way
+
+**Blast Radius:** <one word>
 EOF
 
 gh pr create --title "Describe the change" --body-file /tmp/pr-body.md --base <base-branch>

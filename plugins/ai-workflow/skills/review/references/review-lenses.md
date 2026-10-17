@@ -6,7 +6,7 @@ Skip the Spec axis only when the user confirms that no governing specification e
 
 ## Standards
 
-Read applicable repository guidance first: `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, coding-standard files, formatter or linter configuration, and local guidance for the changed area. Cite the source and rule for every documented-standard finding.
+Read applicable repository guidance first: `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `CODING_STANDARDS.md` and other coding-standard files, formatter or linter configuration, and local guidance for the changed area. Cite the source and rule for every documented-standard finding.
 
 The Standards axis always also uses this baseline. These are labelled heuristics, not hard violations; use `possible <smell>` wording. Repository guidance overrides the baseline when it deliberately endorses a pattern. Skip issues tooling already enforces and report only evidence in the reviewed diff.
 

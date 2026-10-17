@@ -1,11 +1,13 @@
 ---
 name: summarize-changes
-description: Creates a concise, audience-tailored change summary handoff with standard PR-overview sections, repo visuals, before/after behavior diagrams, and representative code snippets. Use when user wants a change summary, PR overview, PR summary doc, branch summary, or a standardized handoff generated from workflow artifacts, a PRD, diff, or feature branch.
+description: Creates a concise, audience-tailored change summary handoff with standard PR-overview sections, repo visuals, before/after behavior diagrams, and representative code snippets. Use when user wants a change summary, PR overview document, branch summary, or a standardized handoff generated from workflow artifacts, a PRD, diff, or feature branch. For the pull request body itself, use `pr`.
 ---
 
 # Summarize Changes
 
 Create or update a standardized change summary handoff using the canonical PR-overview format in this skill: concise, visual, and easy to skim.
+
+This is the long-form local handoff document. It is not the pull request body: write that with [pr](../pr/SKILL.md), which uses this handoff as a source.
 
 Always tailor the overview to the intended audience before drafting. Ask one question at a time when audience, depth, or output target is unclear.
 

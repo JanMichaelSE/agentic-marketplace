@@ -1,6 +1,6 @@
 {
   "name": "engineering",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Stable cross-stack planning, implementation, discovery, diagnostics, local web testing, code simplification, merge-resolution guidance, and session retrospectives.",
   "author": {
     "name": "Jan Montalvo"

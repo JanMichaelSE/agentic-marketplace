@@ -1,6 +1,6 @@
 {
   "name": "engineering",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Cross-stack planning, implementation, diagnostics, web testing, simplification, merge-resolution guidance, and session retrospectives.",
   "author": { "name": "Jan Montalvo" },
   "homepage": "https://github.com/JanMichaelSE/agentic-marketplace/tree/main/plugins/engineering",
