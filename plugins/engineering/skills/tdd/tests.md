@@ -61,6 +61,23 @@ Cross the agreed caller-facing seam instead, and assert the result a caller can
 observe. The test should fail if the production behavior regresses, even when
 its fixtures remain valid.
 
+A test is also tautological when its expected value restates the
+implementation, so it passes by construction:
+
+```typescript
+// BAD: Expected value is recomputed the way the code computes it
+test("calculateTotal sums line items", () => {
+  const items = [{ price: 10 }, { price: 5 }];
+  const expected = items.reduce((sum, i) => sum + i.price, 0);
+  expect(calculateTotal(items)).toBe(expected);
+});
+
+// GOOD: Expected value is an independent, known literal
+test("calculateTotal sums line items", () => {
+  expect(calculateTotal([{ price: 10 }, { price: 5 }])).toBe(15);
+});
+```
+
 ```typescript
 // BAD: Bypasses interface to verify
 test("createUser saves to database", async () => {

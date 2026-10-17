@@ -97,18 +97,16 @@ Push the selected branch to the approved remote. If the push fails, stop and rep
 
 Create a draft PR only after the branch has been pushed and PR creation is explicitly authorized.
 
-Use the `summarize-changes` output as the PR body or as the primary source for the PR body. Keep the PR in draft state for engineer review.
+Write the PR body with the [pr](../pr/SKILL.md) skill. Use the `summarize-changes` handoff, review and repair summaries, and `orchestration/run-summary.md` as its sources; do not paste the change summary in as the body. Keep the PR in draft state for engineer review.
 
-The PR body should include:
+The `pr` sections must carry:
 
-- Summary of the implemented change.
-- Validation evidence from the workflow run.
-- Terminal state from `orchestration/run-summary.md`.
-- Links or references to relevant local artifacts when appropriate.
-- Jira key and backlink context when the run is Jira-backed.
-- A caller-supplied session or run link when provided (for example, a hosted
-  Cosmos session URL), so a reviewer can trace the PR back to the run.
-- Known risks, deferred findings, and human-required decisions.
+- **Summary**: the smallest visual of the implemented change.
+- **Evidence**: before/after validation evidence from the workflow run.
+- **Merge Danger**: the door call, blast radius, known risks, deferred findings, and human-required decisions.
+- **Trace**: the terminal state from `orchestration/run-summary.md`, the Jira key when the run is Jira-backed, and a caller-supplied session or run link when provided (for example, a hosted Cosmos session URL), so a reviewer can trace the PR back to the run.
+
+Write the body to a temporary file and pass it with `--body-file` (or the host's equivalent) so Markdown survives quoting.
 
 Do not mark the PR ready for review unless the user explicitly asks.
 

@@ -36,7 +36,7 @@ agentic-marketplace/
 
 Current plugin groups:
 
-- `plugins/ai-workflow/` contains plan grilling, domain-aware decision capture, execution planning, implementation slicing, local orchestration, bounded implementation, refactoring, review, repair, Jira-native sync, publishing, and change-summary handoff workflow skills.
+- `plugins/ai-workflow/` contains plan grilling, domain-aware decision capture, execution planning, implementation slicing, local orchestration, bounded implementation, refactoring, review, repair, Jira-native sync, PR body, publishing, and change-summary handoff workflow skills.
 - `plugins/atlassian/` contains vendor-neutral Jira lifecycle and read-oriented Confluence research skills.
 - `plugins/engineering/` contains planning, implementation, discovery, diagnostics, local web testing, simplification, and merge-resolution guidance.
 - `plugins/experimental/` contains preview skills that are still gathering feedback.

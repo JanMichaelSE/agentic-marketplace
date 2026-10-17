@@ -48,6 +48,9 @@ Default to a concise Markdown or chat response. Present a numbered list of only 
 - **Solution** — plain English description of what would change
 - **Benefits** — how the change improves the active path, testability, and, when applicable, locality or leverage
 - **Scope** — why the recommendation is the smallest useful change and what is intentionally deferred
+- **Recommendation strength** — `Strong`, `Worth exploring`, or `Speculative`
+
+End with a **Top recommendation**: the candidate to tackle first and why.
 
 Use the project's domain terms and `codebase-design` vocabulary when available. If an ADR conflicts with a candidate, surface it only when demonstrated friction warrants reconsideration; otherwise respect the decision. Do not propose an interface before the user selects a candidate.
 

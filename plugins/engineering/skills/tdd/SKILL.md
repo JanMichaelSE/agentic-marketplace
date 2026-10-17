@@ -67,7 +67,7 @@ Ask: "Which seam will callers cross, and which observable behaviors matter most 
 
 ### 2. Reject Tautological Tests
 
-A test is **tautological** when it passes because its setup already guarantees the assertion rather than because production behavior was exercised. Common signs include asserting the value configured on a mock, verifying only a call to an internal collaborator, or repeating the implementation's conditional logic in the test.
+A test is **tautological** when it passes because its setup already guarantees the assertion rather than because production behavior was exercised. Common signs include asserting the value configured on a mock, verifying only a call to an internal collaborator, repeating the implementation's conditional logic in the test, or recomputing the expected value the way the code computes it (`expect(add(a, b)).toBe(a + b)`). Expected values must come from an independent source of truth: a known-good literal, a worked example, or the spec.
 
 A tautological test can fail when its fixture is wrong, but it supplies no evidence that the system works for a caller. Rewrite it to cross the agreed seam and assert a meaningful observable outcome. See [tests.md](tests.md) for examples.
 

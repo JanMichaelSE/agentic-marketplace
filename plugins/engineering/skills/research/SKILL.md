@@ -41,6 +41,7 @@ artifact.
   contracts over blogs, search snippets, or unattributed generated text.
 - When only secondary evidence is available, label it as such and state the
   verification gap.
-- For codebase-pattern research beyond the current checkout, the optional
-  `github-enterprise-search` skill can supply read-only repository evidence; do
-  not assume that companion plugin is installed.
+- For codebase-pattern research beyond the current checkout, use read-only
+  repository search tooling the environment already provides (for example
+  GitHub's `gh search code` through the `github` skill); do not assume a
+  companion plugin is installed.

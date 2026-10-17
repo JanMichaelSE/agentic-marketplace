@@ -79,6 +79,10 @@ If you force a red result by mutating code or a fixture, compare it against a
 pristine copy to prove the intended mutation landed before trusting the result.
 Restore the temporary mutation before validating the actual fix.
 
+State the hypothesis that proved correct in the commit message or PR body (the
+`pr` skill's Evidence section when AI Workflow is installed), so the next
+debugger learns from it.
+
 ## Completion
 
 Before declaring success, confirm the original symptom no longer reproduces,
