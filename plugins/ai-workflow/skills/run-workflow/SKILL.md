@@ -5,7 +5,7 @@ description: Orchestrate an approved local ai-workflow from slices through imple
 
 # Run Workflow
 
-Coordinate an approved local `.scratch/<feature-slug>/` workflow across the existing `ai-workflow` skills. This skill is a local orchestration contract for agents running in capable hosts; it does not replace `implement-scope`, `refactor`, `review`, `repair-findings`, or `summarize-changes`.
+Coordinate an approved local `.scratch/<feature-slug>/` workflow across the existing `ai-workflow` skills. This skill is a local orchestration contract for agents running in capable hosts; it does not replace `implement-scope`, `refactor`, `review`, `repair-findings`, or `pr`.
 
 The workflow is vendor-neutral and portable across local Codex, local Claude Code, and future orchestration runtimes. Host-specific sub-agent support is an execution capability, not a required dependency.
 
@@ -27,7 +27,7 @@ Before running workflow mode, confirm:
 - Each slice has a concrete `Write Boundary`, `Parallel Safety`, and `Concurrency Group`.
 - The target checkout is available.
 - Dirty-worktree ownership is clear for every implementation and repair boundary.
-- The requested change target for review and change summary is explicit, such as a working-tree diff, staged diff, commit range, branch comparison, or file scope.
+- The requested change target for review and the PR body is explicit, such as a working-tree diff, staged diff, commit range, branch comparison, or file scope.
 
 Feature-root input is selection input only. If the user supplies only the feature root, derive the approved slice list from the execution plan and ready slice files, then record the exact ordered slice paths in the run summary before implementation starts. Do not auto-sweep every ready slice. Worker dispatch always uses the recorded explicit slice list, and every `implement-scope` worker receives exactly one explicit slice path.
 
@@ -37,7 +37,7 @@ Load these references before running the corresponding workflow stage:
 
 - [`implementation-batching.md`](references/implementation-batching.md) for dependency order, write-boundary checks, parallel safety, and concurrency groups.
 - [`review-repair-cycle.md`](references/review-repair-cycle.md) for the default one-pass review and repair flow and explicit post-repair re-review.
-- [`worker-prompt-packets.md`](references/worker-prompt-packets.md) for implementation worker, review lane, refactor, repair, and summary invocation packets.
+- [`worker-prompt-packets.md`](references/worker-prompt-packets.md) for implementation worker, review lane, refactor, repair, and PR body invocation packets.
 - [`run-summary-template.md`](references/run-summary-template.md) for the terminal local engineer review handoff.
 - [`example-run-summary.md`](references/example-run-summary.md) for a concise run-state and resume example.
 
@@ -74,11 +74,11 @@ Record the discovery mode and any fallback reason in the run summary.
 14. Run review cycle 1 with the existing `review` contract and the complete workflow change target.
 15. Prefer one review lane per enabled axis when host sub-agent support is available.
 16. Use parent-orchestrated review lanes when nested delegation is unavailable: the parent coordinator starts one lane per enabled axis, then supplies those lane results to `review` as `parent-orchestrated-lanes`.
-17. If review returns `PASS`, run `summarize-changes` for the local engineer review handoff.
+17. If review returns `PASS`, skip repair and go to step 21.
 18. If review returns `REPAIR_REQUIRED`, run one single-pass, single-agent `repair-findings` pass directly from the review summary for automated-repair eligible findings only.
 19. When no post-repair re-review was requested, derive the terminal state from the repair summary: return `PASS` only when every blocking finding is fixed with its focused validation and no human decision or blocker remains; otherwise return `REPAIR_REQUIRED`, `HUMAN_REQUIRED`, or `BLOCKED` as supported by the remaining findings.
 20. Run one post-repair review only when the user explicitly requested it. Supply the prior review summary, repair summary, and current change target; use that review's gate status as the terminal state and do not run another repair pass.
-21. Run `summarize-changes` for the local engineer review handoff. When the terminal state is not `PASS`, produce a summary only when enough change-target evidence exists without masking that state.
+21. Run `pr` once to write `.scratch/<feature-slug>/pr-body.md` and present it to the engineer as the local review handoff. This is the only change summary the run produces, and `publish-draft-pr` reuses it as the PR body. When the terminal state is not `PASS`, write it only when enough change-target evidence exists, and state the terminal state under Merge Danger and Trace instead of masking it.
 22. Stop on a terminal state and produce or update the local run summary for engineer review.
 
 ## Review and Repair Loop
@@ -111,7 +111,7 @@ At handoff, report:
 - Status and terminal state.
 - Feature root, slice selection source, and explicit slice paths processed.
 - Implementation batches and any serialization decisions.
-- Implementation summaries, feature-level refactor summary, review summaries, repair summaries, change summary, and `orchestration/run-summary.md` artifact paths.
+- Implementation summaries, feature-level refactor summary, review summaries, repair summaries, the `pr-body.md` handoff, and `orchestration/run-summary.md` artifact paths.
 - Review execution mode: `delegated-lanes`, `parent-orchestrated-lanes`, `single-agent-fallback`, or `blocked`.
 - Validation evidence and commands actually run.
 - Repair outcomes, deferred findings, unresolved repair queue, and human-required decisions.

@@ -24,7 +24,7 @@ Confirm these inputs before changing branch or staging files:
 - Target repository and current checkout.
 - Feature root, usually `.scratch/<feature-slug>/`.
 - Terminal `orchestration/run-summary.md` path.
-- Change summary artifact from `summarize-changes`, usually under `.scratch/<feature-slug>/change-summary/`.
+- PR body from `pr`, usually `.scratch/<feature-slug>/pr-body.md`, as written for the engineer review handoff.
 - Base branch or base ref for the draft PR.
 - Branch naming rule or explicit branch name.
 - Commit selection scope.
@@ -97,7 +97,7 @@ Push the selected branch to the approved remote. If the push fails, stop and rep
 
 Create a draft PR only after the branch has been pushed and PR creation is explicitly authorized.
 
-Write the PR body with the [pr](../pr/SKILL.md) skill. Use the `summarize-changes` handoff, review and repair summaries, and `orchestration/run-summary.md` as its sources; do not paste the change summary in as the body. Keep the PR in draft state for engineer review.
+Use the PR body the [pr](../pr/SKILL.md) skill wrote for the engineer review handoff, so the PR says what the engineer already reviewed. If that body is missing, or the committed diff changed after it was written, write or rewrite it with `pr` from the committed diff, review and repair summaries, and `orchestration/run-summary.md` before creating the PR. Never publish any other summary artifact as the body. Keep the PR in draft state for engineer review.
 
 The `pr` sections must carry:
 
@@ -116,7 +116,7 @@ For Jira-backed workflows, read `.scratch/<feature-slug>/jira/sync-state.json` w
 
 After the draft PR exists and Jira backlinking is explicitly authorized:
 
-- Delegate a `pr-backlink` checkpoint to `jira-checkpoint-sync` with the draft PR URL, branch, terminal state, commit, and summary artifact name.
+- Delegate a `pr-backlink` checkpoint to `jira-checkpoint-sync` with the draft PR URL, branch, terminal state, and commit.
 - Preserve separated workflow artifacts as local evidence; do not publish full diffs to Jira by default.
 
 If Jira writing fails, leave the branch and draft PR intact, report the failed Jira operation, and do not retry in a loop.

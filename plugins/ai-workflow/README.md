@@ -1,6 +1,6 @@
 # AI Workflow
 
-Stable vendor-neutral workflow skills for turning planning context into implementation, refactor, review, repair, orchestration, Jira-native sync, PR bodies, publishing, and change summary handoff artifacts.
+Stable vendor-neutral workflow skills for turning planning context into implementation, refactor, review, repair, orchestration, Jira-native sync, PR bodies that double as the engineer review handoff, and publishing.
 
 ## Skills
 
@@ -18,8 +18,7 @@ Stable vendor-neutral workflow skills for turning planning context into implemen
 | [**refactor**](skills/refactor/SKILL.md) | Available | Refactor explicitly scoped changes while preserving behavior and writing a concise handoff | Preparing implemented changes for broader review |
 | [**review**](skills/review/SKILL.md) | Available | Review changes through independent Standards and Spec axes and produce a repair-ready summary without modifying code | Evaluating implemented or refactored changes before repair, local review, commit, or PR creation |
 | [**repair-findings**](skills/repair-findings/SKILL.md) | Available | Repair eligible in-scope review findings and record each repair outcome | Applying bounded fixes directly from review findings before local review, commit, or PR creation |
-| [**summarize-changes**](skills/summarize-changes/SKILL.md) | Available | Create a concise change summary handoff using the standard overview format | Summarizing workflow artifacts, real code changes, and validation evidence before PR creation |
-| [**pr**](skills/pr/SKILL.md) | Available | Write a PR body as a Summary visual, before/after Evidence, and a Merge Danger door call | Writing or rewriting any pull request body, including the one `publish-draft-pr` submits |
+| [**pr**](skills/pr/SKILL.md) | Available | Write a PR body as a Summary visual, before/after Evidence, and a Merge Danger door call; the same body is the engineer review handoff | Presenting finished changes to the engineer, and writing or rewriting any pull request body, including the one `publish-draft-pr` submits |
 | [**publish-draft-pr**](skills/publish-draft-pr/SKILL.md) | Available | Publish an authorized branch, commit, draft PR, and optional Jira backlink | Creating a draft PR only after terminal workflow handoff and explicit authorization |
 
 ## Usage Flow
@@ -29,11 +28,11 @@ Stable vendor-neutral workflow skills for turning planning context into implemen
 3. Use `create-execution-plan` to publish `.scratch/<feature-slug>/execution-plan.md`.
 4. Use `create-implementation-slices` to propose slices and write approved files under `.scratch/<feature-slug>/slices/`.
 5. For Jira-backed workflows where the plan and slices already live in Jira, use `jira-plan-import` to pull the plan from the Epic/Story description and the slices from child Stories (Epic) or Sub-tasks (Story) into local artifacts. Use `jira-plan-sync` instead (or afterward) to push approved local plans/slices back up to Jira for Epic/Story.
-6. Use `run-workflow` to coordinate implementation, refactor, one review-and-repair pass, and summary after approved slices exist. Request a post-repair re-review explicitly when needed.
-7. Use `implement-scope`, `refactor`, `review`, `repair-findings`, and `summarize-changes` directly when running the workflow manually or handling a bounded standalone request.
-8. Use the change summary handoff for engineer local review and commit decisions.
-9. Use `publish-draft-pr` only for explicit draft PR publishing after terminal handoff and authorization. It writes the PR body with `pr`, drawing on the change summary and run artifacts.
-10. Use `pr` directly whenever a PR body is written or rewritten outside the workflow.
+6. Use `run-workflow` to coordinate implementation, refactor, one review-and-repair pass, and the `pr` body handoff after approved slices exist. Request a post-repair re-review explicitly when needed.
+7. Use `implement-scope`, `refactor`, `review`, `repair-findings`, and `pr` directly when running the workflow manually or handling a bounded standalone request.
+8. Use the `pr` body at `.scratch/<feature-slug>/pr-body.md` for engineer local review and commit decisions. There is no separate change summary.
+9. Use `publish-draft-pr` only for explicit draft PR publishing after terminal handoff and authorization. It publishes that same `pr` body, rewriting it with `pr` only when the diff changed.
+10. Use `pr` directly whenever changes are presented to the engineer or a PR body is written outside the workflow.
 
 ## Jira Native Sync
 
@@ -67,8 +66,7 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
     cycle-02-review-summary.md # only when explicitly requested
   repair/
     cycle-01-repair-summary.md
-  change-summary/
-    <scope-stem>-change-summary.md
+  pr-body.md
   orchestration/
     run-summary.md
   jira/
@@ -84,8 +82,7 @@ Jira-backed workflows use Jira descriptions, child work items, and comments as t
 - `review` is read-only and normally reviews the assembled feature, story, or approved workflow scope after implementation; per-slice review is reserved for explicit, high-risk, long-running, independently owned, or independently releasable slices.
 - `review` does not perform repair, commits, PR posting, Jira updates, branch operations, or code edits.
 - `repair-findings` edits only within an explicit repair boundary, records each repair outcome, leaves changes uncommitted, and does not perform PR, Jira, branch, or re-review orchestration.
-- `summarize-changes` creates or updates a concise change summary handoff artifact; it does not create PRs, update Jira, commit, push, or orchestrate review or repair.
-- `pr` shapes a PR body only; it does not push, open, edit, or comment on pull requests.
+- `pr` shapes the PR body, which is also the engineer review handoff; it does not push, open, edit, or comment on pull requests.
 - `jira-plan-import` owns planning-stage Jira reads and local artifact writes; it reads the plan and slices from descriptions and child work items (never attachments) and does not write to Jira, implement, review, repair, summarize, branch, commit, push, create PRs, transition Jira workflow states, or edit Jira fields.
 - `jira-plan-sync` owns planning-stage Jira writes to descriptions and child work items; it does not implement, review, repair, summarize, branch, commit, push, create PRs, transition Jira workflow states, or edit unrelated Jira fields.
 - `jira-checkpoint-sync` owns checkpoint-stage Jira writes to descriptions and comments; it does not implement, review, repair, summarize, branch, commit, push, create PRs, transition Jira workflow states, or edit unrelated Jira fields.

@@ -1,7 +1,7 @@
 {
   "name": "ai-workflow",
-  "version": "1.7.0",
-  "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, two-axis review, repair, Jira-native plan and checkpoint sync, PR body writing, draft PR publishing, and change summary handoff.",
+  "version": "1.8.0",
+  "description": "Stable AI workflow skills for plan grilling, domain-aware decision capture, planning, slicing, orchestration, implementation, refactoring, two-axis review, repair, Jira-native plan and checkpoint sync, PR bodies that double as the engineer review handoff, and draft PR publishing.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -31,8 +31,6 @@
     "repair-findings",
     "repair",
     "review",
-    "summarize-changes",
-    "change-summary",
     "pr",
     "pull-request",
     "publish-draft-pr",
@@ -43,8 +41,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "AI Workflow",
-    "shortDescription": "Grill plans, capture domain decisions, slice, orchestrate, sync Jira-native plans and checkpoints, implement, review, repair, write PR bodies, publish draft PRs, and summarize AI-assisted work.",
-    "longDescription": "Vendor-neutral workflow skills for stress-testing plans, capturing confirmed domain decisions in local documentation, turning planning context into execution plans, approved implementation slices, local workflow orchestration, Jira-native planning and checkpoint synchronization, bounded implementation handoffs, scoped refactor summaries, independent Standards and Spec review summaries, validated repair summaries, reviewer-first PR bodies, explicit draft PR publishing, and concise change summary handoffs.",
+    "shortDescription": "Grill plans, capture domain decisions, slice, orchestrate, sync Jira-native plans and checkpoints, implement, review, repair, write PR bodies that double as the engineer handoff, and publish draft PRs.",
+    "longDescription": "Vendor-neutral workflow skills for stress-testing plans, capturing confirmed domain decisions in local documentation, turning planning context into execution plans, approved implementation slices, local workflow orchestration, Jira-native planning and checkpoint synchronization, bounded implementation handoffs, scoped refactor summaries, independent Standards and Spec review summaries, validated repair summaries, reviewer-first PR bodies that double as the engineer review handoff, and explicit draft PR publishing.",
     "developerName": "Jan Montalvo",
     "category": "Engineering",
     "capabilities": [
@@ -63,8 +61,7 @@
       "Use refactor to improve this implemented workflow or explicit boundary without changing behavior.",
       "Use review to evaluate this implemented feature or code change through independent Standards and Spec axes and write a repair-ready summary.",
       "Use repair-findings to repair eligible in-scope review findings and write a validation-backed summary.",
-      "Use summarize-changes to summarize implemented changes, review evidence, and validation in the standard PR overview format.",
-      "Use pr to write this pull request body with a Summary visual, before/after Evidence, and a Merge Danger call.",
+      "Use pr to present these changes for review and write the pull request body with a Summary visual, before/after Evidence, and a Merge Danger call.",
       "Use publish-draft-pr only after terminal workflow handoff and explicit authorization to publish a draft PR."
     ],
     "brandColor": "#0F766E"

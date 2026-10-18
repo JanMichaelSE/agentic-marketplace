@@ -73,7 +73,7 @@ Status: IN_PROGRESS | PASS | REPAIR_REQUIRED | HUMAN_REQUIRED | BLOCKED
 - `Slice Selection Source`: state whether slice paths were user-supplied or derived from the feature root after validating the execution plan and slice readiness.
 - `Explicit Slice Paths`: list only selected slices in execution order, not every ready slice in the feature root. Record this list before implementation starts and keep using it for resume.
 - `Run State`: `IN_PROGRESS` until a terminal outcome is reached; after terminal handoff, match `Status`.
-- `Current Stage`: one of `selecting-slices`, `implementation`, `refactor`, `review-cycle-1`, `repair-cycle-1`, `review-cycle-2` (only when explicitly requested), `change-summary`, or `terminal`.
+- `Current Stage`: one of `selecting-slices`, `implementation`, `refactor`, `review-cycle-1`, `repair-cycle-1`, `review-cycle-2` (only when explicitly requested), `pr-body`, or `terminal`.
 - `Current Cycle`: `none` or `1`; use `2` only for an explicitly requested post-repair re-review.
 - `Terminal State`: `None` while `Run State` is `IN_PROGRESS`; after terminal handoff, explain why the workflow ended as `PASS`, `REPAIR_REQUIRED`, `HUMAN_REQUIRED`, or `BLOCKED`. A post-repair `PASS` is supported by repair outcomes and focused validation unless an optional re-review ran.
 - `Implementation Batches`: capture dependency order, worker execution mode, outcomes, summary paths, and blocked slices.
@@ -89,5 +89,5 @@ Status: IN_PROGRESS | PASS | REPAIR_REQUIRED | HUMAN_REQUIRED | BLOCKED
 - `Deferred Findings`: list optional, out-of-boundary, superseded, or later-work items.
 - `Evidence-Backed Justifications`: include the finding ID, source evidence, and why it was deferred or no longer blocks local engineer review.
 - `Local Engineer Review Handoff`: state what the engineer should review locally before deciding on any out-of-scope branch, commit, pull request, Jira, or external workflow action. Distinguish focused repair validation from optional independent re-review.
-- `Files and Artifacts`: list implementation summaries, the feature-level refactor summary, review summaries, repair summaries, change summaries, and this run summary.
+- `Files and Artifacts`: list implementation summaries, the feature-level refactor summary, review summaries, repair summaries, the `pr-body.md` handoff, and this run summary.
 - `External Side Effects`: state `None` unless the workflow was explicitly stopped because an attempted or requested side effect was out of scope.

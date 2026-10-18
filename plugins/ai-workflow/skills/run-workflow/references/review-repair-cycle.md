@@ -9,7 +9,7 @@ The default flow performs one review and, when needed, one repair pass:
 ```text
 review/cycle-01-review-summary.md
   -> repair/cycle-01-repair-summary.md
-  -> change-summary/<scope-stem>-change-summary.md
+  -> pr-body.md
   -> orchestration/run-summary.md
 ```
 
@@ -37,7 +37,7 @@ Record in the run summary:
 - cycle-01 review summary path and execution mode,
 - cycle-01 repair summary path when repair ran,
 - optional cycle-02 review summary path and execution mode only when requested,
-- change-summary path when summary ran,
+- `pr-body.md` path when the PR body was written,
 - `.scratch/<feature-slug>/orchestration/run-summary.md`,
 - validation evidence used for the terminal decision,
 - repair outcomes, unresolved findings, deferred findings, and human decision queue.

@@ -139,18 +139,18 @@ Instructions:
 - Leave changes uncommitted.
 ```
 
-## Summary Invocation Packet
+## PR Body Invocation Packet
 
-Run summary after the workflow reaches a terminal state.
+Write the PR body after the workflow reaches a terminal state.
 
 ```markdown
-Use `ai-workflow:summarize-changes`.
+Use `ai-workflow:pr`.
 
 Repository:
 
 Feature root:
 
-Summary scope:
+Base branch:
 
 Change target:
 
@@ -161,7 +161,7 @@ Terminal state:
 Run summary path:
 
 Instructions:
-- Produce the local engineer review handoff.
-- Include implementation, refactor, review, response, repair, validation, unresolved findings, and human decision evidence.
+- Write the PR body to `.scratch/<feature-slug>/pr-body.md`; it is both the local engineer review handoff and the future PR description.
+- Draw on implementation, refactor, review, repair, and validation evidence; carry unresolved findings and human decisions under Merge Danger and the terminal state under Trace.
 - Do not create pull requests, post comments, update Jira, commit, push, or perform external workflow actions.
 ```
