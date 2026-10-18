@@ -1,6 +1,6 @@
 ---
 name: pr
-description: Write or rewrite a pull request body as a Summary visual, before/after Evidence, and a Merge Danger call. Use when writing a PR body, including the body `publish-draft-pr` submits.
+description: Write or rewrite a pull request body as a Summary visual, before/after Evidence, and a Merge Danger call. Use when writing a PR body, presenting finished changes to the engineer for local review, or handing off a `run-workflow` run; the same body is what `publish-draft-pr` submits.
 metadata:
   source: "https://github.com/mattpocock/skills/blob/49dd158/skills/engineering/pr/SKILL.md"
   credits:
@@ -39,13 +39,24 @@ This skill shapes the body only. It does not push, open, or edit a PR; those
 side effects belong to [publish-draft-pr](../publish-draft-pr/SKILL.md) or an
 explicit user request.
 
+## One Body, Two Readers
+
+The same body is the engineer's local review handoff and the pull request
+description. There is no separate change summary: the engineer reviews exactly
+what a PR reviewer will later read.
+
+- Write it to `.scratch/<feature-slug>/pr-body.md`, or to the path the caller
+  names, and show it to the engineer in the conversation.
+- When a PR is opened later, reuse that file. Rewrite it first only if the diff
+  changed after it was written; never draft a second, competing body.
+
 ## Sources
 
 Write from the reviewed diff against the correct base, plus the ticket, spec,
 or execution plan that motivated it, so the door call reflects intent and not
-only the diff. When they exist, also draw on the `summarize-changes` handoff,
-review and repair summaries, and `orchestration/run-summary.md`. Use them as
-evidence; do not paste them in.
+only the diff. When they exist, also draw on implementation, review, and repair
+summaries and `orchestration/run-summary.md`. Use them as evidence; do not
+paste them in.
 
 Skip all preambles and keep prose brief: the body starts at `## Summary`. Use
 the project's domain language from its established glossary (`GLOSSARY.md` or

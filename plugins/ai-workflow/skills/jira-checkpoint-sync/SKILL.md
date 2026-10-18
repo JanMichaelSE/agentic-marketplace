@@ -41,7 +41,7 @@ If sync state, destination mapping, artifact evidence, or write authorization is
 - `terminal`: comment on the source Epic or Story with final terminal state and local artifact pointers.
 - `pr-backlink`: comment on the source Epic or Story after an authorized draft PR exists.
 
-Do not sync change-summary artifacts to Jira by default. Change summaries remain local or become the draft PR body unless a later workflow explicitly authorizes Jira summary sync.
+Do not sync the `pr-body.md` handoff to Jira by default. It stays local until `publish-draft-pr` uses it as the draft PR body, unless a later workflow explicitly authorizes Jira sync of it.
 
 ## Destination Mapping
 
