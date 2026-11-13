@@ -97,7 +97,7 @@ Assign stable finding IDs such as `REV-<scope>-001`. During re-review, preserve 
 5. Discover applicable repository standards and the Standards baseline described in the review-axes reference.
 6. Check whether sub-agent or parallel-agent tooling is available before selecting an execution mode.
 7. Choose the review execution mode:
-   - `delegated-lanes`: this skill spawns independent Standards and Spec lanes.
+   - `delegated-lanes`: this skill spawns independent Standards and Spec lanes, each with a fresh context window. Issue both lane calls together, in the foreground, and aggregate the reports they return.
    - `parent-orchestrated-lanes`: the parent coordinator supplies one result per enabled axis because this skill cannot spawn nested lanes.
    - `single-agent-fallback`: delegation is unavailable, blocked, failed, or not useful for a very small target, and the target is bounded enough to cover every enabled axis in one read-only pass.
    - `blocked`: required source inputs or target access are missing, or the target is too large or risky for the available execution mode.

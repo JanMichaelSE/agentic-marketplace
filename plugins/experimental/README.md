@@ -30,7 +30,7 @@ The following skills were promoted out of `experimental`; install their destinat
 |--------------------|------------------|
 | [ai-workflow](../ai-workflow/README.md) | `code-review` superseded by `review` |
 | [engineering](../engineering/README.md) | `research`, `prototype`, `diagnosing-bugs`, `resolving-merge-conflicts` |
-| [productivity](../productivity/README.md) | `grilling`, `writing-for-agents`, `wait-what`, `zoom-out` |
+| [productivity](../productivity/README.md) | `grilling`, `writing-for-agents`, `wait-what` (`zoom-out` since removed) |
 | [review-toolkit](../review-toolkit/README.md) | `draft-code-review-comment`, `pr-comment-addressed-check` |
 | [software-architecture](../software-architecture/README.md) | `codebase-design`, `domain-modeling`, `improve-codebase-architecture` |
 

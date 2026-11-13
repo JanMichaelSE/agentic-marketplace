@@ -43,7 +43,7 @@ Current plugin groups:
 - `plugins/github/` contains GitHub CLI repository-operation and GitHub Actions workflow guidance.
 - `plugins/infrastructure/` contains AWS, Kubernetes, Terraform, and cloud guidance skills.
 - `plugins/keychain/` contains cross-platform developer-laptop credential-storage guidance.
-- `plugins/productivity/` contains general-purpose decision grilling, handoff, agent-writing, clarity, and codebase-orientation skills.
+- `plugins/productivity/` contains general-purpose decision grilling, handoff, agent-writing, and clarity skills.
 - `plugins/review-toolkit/` contains code, design, security, test-coverage, test-correctness, and orchestrated review skills.
 - `plugins/software-architecture/` contains architecture vocabulary, domain modeling, and architecture-improvement guidance.
 - `plugins/ui-ux/` contains data-backed UI/UX design intelligence and Figma-backed interface implementation guidance.

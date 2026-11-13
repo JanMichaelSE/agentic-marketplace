@@ -31,7 +31,8 @@ when a primary source is available.
    installation, commits, or external writes.
 
 Delegating investigation is optional: use a background agent only when the
-environment supports it and task boundaries are clear. The coordinating agent
+environment supports it and task boundaries are clear. Start it with a fresh
+context window, not a fork of this conversation. The coordinating agent
 remains responsible for checking citations and delivering one coherent findings
 artifact.
 

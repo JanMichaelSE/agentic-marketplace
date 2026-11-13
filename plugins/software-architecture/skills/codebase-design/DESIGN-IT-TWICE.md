@@ -21,8 +21,8 @@ Before exploring alternatives, write a user-facing explanation of:
 
 ### 2. Produce distinct alternatives
 
-Use available parallel research agents when supported; otherwise explore the
-alternatives sequentially. Produce at least three radically different interface
+Use available parallel research agents when supported, each with a fresh context
+window; otherwise explore the alternatives sequentially. Produce at least three radically different interface
 designs, each with a distinct constraint:
 
 1. Minimize the interface to one to three entry points and maximize leverage.

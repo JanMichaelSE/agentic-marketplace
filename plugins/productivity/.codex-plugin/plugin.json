@@ -1,7 +1,7 @@
 {
   "name": "productivity",
-  "version": "1.0.1",
-  "description": "Stable agent collaboration skills for decision grilling, session handoffs, agent-facing writing, clearer explanations, and codebase orientation.",
+  "version": "1.1.0",
+  "description": "Stable agent collaboration skills for decision grilling, session handoffs, agent-facing writing, and clearer explanations.",
   "author": {
     "name": "Jan Montalvo"
   },
@@ -12,7 +12,6 @@
     "handoff",
     "writing-for-agents",
     "wait-what",
-    "zoom-out",
     "agent-collaboration",
     "productivity",
     "skills"
@@ -21,7 +20,7 @@
   "interface": {
     "displayName": "Productivity",
     "shortDescription": "Stable collaboration, clarity, and agent-writing skills.",
-    "longDescription": "General workflow guidance for resolving decisions, preserving session context, writing dependable agent instructions, clarifying explanations, and orienting in unfamiliar code.",
+    "longDescription": "General workflow guidance for resolving decisions, preserving session context, writing dependable agent instructions, and clarifying explanations.",
     "developerName": "Jan Montalvo",
     "category": "Productivity",
     "capabilities": [
@@ -31,8 +30,7 @@
       "Help me stress-test this plan or decision.",
       "Create a compact handoff for a fresh agent session.",
       "Help me write or improve an agent instruction, skill, or supporting reference.",
-      "Re-explain this in plain language using our project terminology.",
-      "Give me a higher-level map of this unfamiliar code area."
+      "Re-explain this in plain language using our project terminology."
     ],
     "brandColor": "#7C3AED"
   }
