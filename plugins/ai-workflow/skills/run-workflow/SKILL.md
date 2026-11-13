@@ -65,7 +65,7 @@ Record the discovery mode and any fallback reason in the run summary.
 5. Validate slice readiness, dependency state, write boundaries, parallel-safety notes, and concurrency groups.
 6. Record the exact explicit slice list selected for this run before implementation starts.
 7. Build dependency-ordered implementation batches from the recorded slice list.
-8. After capability discovery, spawn one implementation worker per safe ready slice in the current batch when host sub-agent support is available.
+8. After capability discovery, spawn one fresh-context implementation worker per safe ready slice in the current batch when host sub-agent support is available.
 9. Instruct every implementation worker to use `implement-scope` with exactly one explicit slice path.
 10. Serialize slices instead of parallelizing when dependencies, write boundaries, validation prerequisites, dirty-worktree ownership, or concurrency groups make overlap unsafe.
 11. Update run state after each batch with current stage, selected slices, completed batches, blockers, terminal state if any, and next action.

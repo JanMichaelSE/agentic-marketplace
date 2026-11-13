@@ -126,7 +126,7 @@ If no governing context exists at all:
 
 ## Execution Mode
 
-The orchestrator always uses the sub-agent approach. It is coordination-only and must not run any of the review lenses inline.
+The orchestrator always uses the sub-agent approach. It is coordination-only and must not run any of the review lenses inline. Start every sub-agent with a fresh context window, not a fork of this conversation.
 
 Use at most one sub-agent per review skill:
 

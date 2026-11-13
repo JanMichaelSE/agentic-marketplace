@@ -37,7 +37,7 @@ this round belongs to a later round, not this one.
 
 Finding **facts** is your job, never the user's. When a frontier question needs
 a fact from the environment (filesystem, tools, and so on), dispatch a
-sub-agent to find it rather than asking the user. Do not block on it: a running
+sub-agent with a fresh context window to find it rather than asking the user. Do not block on it: a running
 exploration is an unsettled prerequisite, so only its downstream questions wait
 for the result — ask the rest of the frontier now. The **decisions** are the
 user's: put each to them and wait.

@@ -2,6 +2,8 @@
 
 Use these packet outlines when spawning host workers or when serializing the same work in the parent context. Packets are instructions for local agent work; they are not shell commands and do not require a terminal runner.
 
+Start every spawned worker with a fresh context window, not a fork of the parent conversation, so the packet is its only context. Use a fresh worker for each slice, review lane, refactor, repair, and PR body task.
+
 All packets must preserve the workflow boundaries:
 
 - no commits,

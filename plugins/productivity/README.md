@@ -1,6 +1,6 @@
 # Productivity
 
-Installable plugin for stable, general-purpose agent collaboration: resolving decisions, preserving session context, writing dependable agent-facing guidance, clarifying communication, and orienting in unfamiliar code.
+Installable plugin for stable, general-purpose agent collaboration: resolving decisions, preserving session context, writing dependable agent-facing guidance, and clarifying communication.
 
 ## Skills
 
@@ -10,7 +10,6 @@ Installable plugin for stable, general-purpose agent collaboration: resolving de
 | **handoff** | Compact the current conversation into a redacted handoff document | Preparing a fresh agent or later session to continue |
 | **writing-for-agents** | Write predictable skills, agent instructions, and referenced documents | Creating or revising agent-facing guidance |
 | **wait-what** | Request a clearer re-pitch using shared domain language | An explanation did not land; explicit user request only |
-| **zoom-out** | Ask for broader context and a higher-level map of unfamiliar code | Exploring a code area before diving in |
 
 ## Dependency Notes
 
